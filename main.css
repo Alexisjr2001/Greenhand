@@ -1,0 +1,103 @@
+body {
+    margin: 0em;
+}
+header {
+    background-color: #4AB56F;
+    display: flex;
+    padding-left: 15em;
+    padding-right: 15em;
+
+    justify-content: center;
+}
+header>* { /* Children of header*/
+    display:flex;
+    flex:1;
+    align-items: center;
+
+    min-height: 2em;
+    max-height: 3em;
+}
+
+.GH_logo {
+    max-height: 3em;
+}
+
+#header-links>a, #header-sign-up>a{
+    text-decoration: none;
+    color: black;
+    padding: .7em;
+    border-radius: 1em;
+}
+
+#header-links>a:hover, #header-sign-up>a:hover{
+    text-decoration: none;
+    color: black;
+    background-color: #2e9352;
+}
+
+#header-links>a{
+    padding-right: 1em;
+    padding-left: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    /* min-width: 2em; */
+    text-align: center;
+}
+#header-sign-up>a {
+    padding-right: .3em;
+    padding-left:.3em;
+    margin-left: .3em;
+    margin-right: .3em;
+}
+#header-links {
+    justify-content: center;
+    flex: 3;
+}
+
+#header-sign-up {
+    justify-content:right;
+}
+
+#main-page-container {
+    display: flex;
+    padding-left: 18em;
+    padding-right: 18em;
+}
+
+#join-us {
+    display: flex;
+    margin: 5em;
+}
+
+#join-us>img {
+    max-width: auto;
+    max-height: 20em;
+}
+
+#join-us-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5em;
+}
+
+#join-button-container {
+    display: flex;
+    justify-content: center;
+    min-width: auto;
+    flex: 1;
+    
+    align-items: center;
+}
+
+#join-button-container>a {
+    margin-left: 3em;
+    margin-right: 3em;
+    padding: .7em;
+    border-radius: 1em;
+    background-color: rgb(19, 130, 209);
+    color: white;
+}
+
+#join-button-container>a:hover {
+    background-color: rgb(42, 80, 123);
+}

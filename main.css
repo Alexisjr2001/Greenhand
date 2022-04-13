@@ -1,13 +1,25 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0em;
 }
+
+/*--------------------------------------------HEADER CSS----------------------------------------------*/
 header {
     background-color: #4AB56F;
     display: flex;
     padding-left: 15em;
     padding-right: 15em;
+    box-shadow: 0 5px 10px rgba(84, 132, 73, 0.475);
 
     justify-content: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 header>* { /* Children of header*/
     display:flex;
@@ -27,6 +39,8 @@ header>* { /* Children of header*/
     color: black;
     padding: .7em;
     border-radius: 1em;
+
+    transition: all .5s;
 }
 
 #header-links>a:hover, #header-sign-up>a:hover{
@@ -58,18 +72,26 @@ header>* { /* Children of header*/
     justify-content:right;
 }
 
+/*--------------------------------------------MAIN PAGE CSS----------------------------------------------*/
+
 #main-page-container {
     display: flex;
+    flex-direction: column;
     padding-left: 18em;
     padding-right: 18em;
 }
 
-#join-us {
+.section-card {
     display: flex;
+    box-shadow: 0 0 10px 5px rgba(73, 107, 132, 0.315);
     margin: 5em;
+    border-radius: .5em;
 }
 
+/*------------------------------------Join Us CSS--------------------------------------*/
+
 #join-us>img {
+    margin: 1em;
     max-width: auto;
     max-height: 20em;
 }
@@ -77,7 +99,7 @@ header>* { /* Children of header*/
 #join-us-container {
     display: flex;
     flex-direction: column;
-    margin-right: 5em;
+    margin: 2em;
 }
 
 #join-button-container {
@@ -96,8 +118,53 @@ header>* { /* Children of header*/
     border-radius: 1em;
     background-color: rgb(19, 130, 209);
     color: white;
+    text-align: center;
+
+    transition: all .5s;
 }
 
 #join-button-container>a:hover {
     background-color: rgb(42, 80, 123);
+}
+
+/*------------------------------------Our Activities CSS--------------------------------------*/
+#our-activities{
+    flex-direction: column;
+    padding: 2em;
+}
+#our-activities>h1,>p {
+    text-align: center;
+}
+
+#activity-card-container {
+    display: flex;
+}
+
+.activity-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 2em;
+    box-shadow: 0px 5px 10px 5px rgba(78, 78, 78, 0.479);
+    border-radius: 1em;
+
+    text-decoration: none;
+    color: black;
+
+    transition: all .5s;
+}
+
+.activity-card>img {
+    max-height: auto;
+    max-width: 200px;
+}
+
+.activity-card>p {
+    margin: 1.5em;
+}
+
+.activity-card:hover {
+    box-shadow: 0px 5px 20px 10px rgba(41, 70, 92, 0.347);
+    transform: translateY(-10px) translateX(5px);
 }

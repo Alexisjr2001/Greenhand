@@ -132,7 +132,7 @@ header>* { /* Children of header*/
     flex-direction: column;
     padding: 2em;
 }
-#our-activities>h1,>p {
+#our-activities>h1, #our-activities>p {
     text-align: center;
 }
 

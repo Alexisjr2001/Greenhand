@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="miscellaneous.css">
     <title>Greenhand</title>
+    <script type="text/javascript" src="index.js"></script>
 </head>
 <body>
     <header>
@@ -55,7 +56,45 @@
                 </a>
             </div>
         </section>
-
+        <section class="section-card" id="our-activities-detailed">
+            <div id="detailed-activities-title-container">
+                <h1 id="detailed-activities-title">Locations</h1>
+                <div id="detailed-activities-switch-container">
+                    <label class="switch">
+                        <input type="checkbox" onclick="switchDetailedActivities()">
+                        <span class="slider round"></span>
+                      </label>
+                </div>
+            </div>
+            <div id="detailed-activities-locations-container">
+                <a href="" class="detailed-activities-link activity-card">
+                    <img src="Assets/placeholder-image.png" alt="">
+                    <p>Location 1</p>
+                </a>
+                <a href="" class="detailed-activities-link activity-card">
+                    <img src="Assets/placeholder-image.png" alt="">
+                    <p>Location 2</p>
+                </a>
+                <a href="" class="detailed-activities-link activity-card">
+                    <img src="Assets/placeholder-image.png" alt="">
+                    <p>Location 3</p>
+                </a>
+            </div>
+            <div id="detailed-activities-type-container">
+                <a href="" class="detailed-activities-link activity-card invisible">
+                    <img src="Assets/placeholder-image.png" alt="">
+                    <p>Type 1</p>
+                </a>
+                <a href="" class="detailed-activities-link activity-card invisible">
+                    <img src="Assets/placeholder-image.png" alt="">
+                    <p>Type 2</p>
+                </a>
+                <a href="" class="detailed-activities-link activity-card invisible">
+                    <img src="Assets/placeholder-image.png" alt="">
+                    <p>Type 3</p>
+                </a>
+            </div>
+        </section>
     </div>
 </body>
 </html>

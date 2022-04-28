@@ -16,10 +16,11 @@ header {
 
     justify-content: center;
 
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     left: 0;
     right: 0;
+    position:sticky;
 }
 header>* { /* Children of header*/
     display:flex;
@@ -167,4 +168,52 @@ header>* { /* Children of header*/
 .activity-card:hover {
     box-shadow: 0px 5px 20px 10px rgba(41, 70, 92, 0.347);
     transform: translateY(-10px) translateX(5px);
+}
+
+/*------------------------------------Our Activities Detailed CSS--------------------------------------*/
+
+#our-activities-detailed {
+    flex-direction: column;
+    padding: 2em;
+}
+
+#detailed-activities-title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#detailed-activities-title {
+
+}
+
+#detailed-activities-switch-container {
+    
+}
+
+#detailed-activities-locations-container, #detailed-activities-type-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.detailed-activities-link {
+    display: flex;
+    flex-direction: column;
+}
+
+.detailed-activities-link>img {
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 1em;
+    max-width: 300px;
+}
+
+.detailed-activities-link>p {
+    text-align: center;
+}
+
+#detailed-activities-type-container>a {
+    display: none;
 }

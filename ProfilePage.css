@@ -1,0 +1,92 @@
+.user-info-vertical-grid{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 50px 10px 50px;
+}
+
+.user-info-horizontal{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.user-info-text{
+    width: 200px;
+    font-size: 20px;
+    min-width:100px;
+    margin: 0px 0px 0px -100px;
+}
+
+.user-info-input,.gender-drop-down{
+    font-size: 20px;
+    border-radius: 3px;
+    border-width: 1px;
+    height: fit-content;
+    margin-right: 10px;
+    width: 400px;
+}
+
+
+.user-info-save{
+    padding: 10px 20px 10px 20px;
+    width:fit-content;
+    font-size: 20px;
+}
+
+.upload-image{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    width: 401px;
+    height: fit-content;
+    margin-right: 10px;
+}
+
+.choose-file-button{
+    width: fit-content;
+    height: fit-content;
+    margin-right: 10px;
+}
+.profile-picture-file-path{
+    display: inline-block;
+    flex: 1;
+}
+
+.all-user-articles{
+    display: flex;
+    justify-content: center;
+}
+
+.change-article{
+    padding: 10px 20px 10px 20px;
+    width:100px;
+    height:40px;
+    align-self: center;
+    margin: 0px 5px 0px 5px;
+}
+
+.article-preview-placeholder{
+    width: 300px;
+    height:500px;
+    overflow: hidden;
+}
+
+.article-preview-placeholder-help{
+    height: 500px;
+    background-size:cover;
+    background-position:center;
+
+}
+
+.create-article-button{
+    width:fit-content;
+    height:fit-content;
+    margin-top: 10px;
+}
+
+.create-article{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenhand</title>
+  <link rel="stylesheet" href="ProfilePage.css">
+  <link rel="stylesheet" href="HeaderLoggedIn.css">
+</head>
+<body>
+<header>
+  <div id="header-row">
+    <a href=""><img src="Assets/logo-placeholder.png" alt="" class="GH_logo"></a>
+    <nav id="header-links">
+      <a href="../index.html#our-activities">Our Activities</a>
+      <a href="../index.html#our-articles">Our Articles</a>
+      <a href="../index.html">About Us</a>
+      <a href="../index.html#contact-us">Contact Us</a>
+    </nav>
+    <div class="header-right-section">
+      <a class="profile-button" href="">My Profile</a>
+      <a class="log-out-button" href="">Log Out</a>
+    </div>
+  </div>
+</header>
+<div class="user-info-vertical-grid">
+  <div class="user-info-horizontal">
+    <p class="user-info-text">
+      Username:
+    </p>
+    <input class="user-info-input" id="username-input" type="text" placeholder="get.username">
+    <button class="user-info-save" id="username-save">
+      Save
+    </button>
+  </div>
+  <div class="user-info-horizontal">
+    <p class="user-info-text">
+      Password:
+    </p>
+    <input class="user-info-input" id="password-input" type="text" placeholder="Enter a new password">
+    <button class="user-info-save" id="password-save">
+      Save
+    </button>
+  </div>
+  <div class="user-info-horizontal">
+    <p class="user-info-text">
+      Name:
+    </p>
+    <input class="user-info-input" id="name-input" type="text" placeholder="get.name">
+    <button class="user-info-save" id="name-save">
+      Save
+    </button>
+  </div>
+  <div class="user-info-horizontal">
+    <p class="user-info-text">
+      Email Address:
+    </p>
+    <input class="user-info-input" id="email-input" type="text" placeholder="get.email">
+    <button class="user-info-save" id="email-save">
+      Save
+    </button>
+  </div>
+  <div class="user-info-horizontal">
+    <p class="user-info-text">
+      Age:
+    </p>
+    <input class="user-info-input" id="age-input" type="text" placeholder="get.age">
+    <button class="user-info-save" id="age-save">
+      Save
+    </button>
+  </div>
+  <div class="user-info-horizontal">
+    <p class="user-info-text">
+      Country:
+    </p>
+    <input class="user-info-input" id="country-input" type="text" placeholder="get.country">
+    <button class="user-info-save" id="country-save">
+      Save
+    </button>
+  </div>
+  <div class="user-info-horizontal">
+    <p class="user-info-text">
+      City/Town/State:
+    </p>
+    <input class="user-info-input" id="city-input" type="text" placeholder="get.city">
+    <button class="user-info-save" id="city-save">
+      Save
+    </button>
+  </div>
+  <div class="user-info-horizontal">
+    <p class="user-info-text">
+      Phone Number:
+    </p>
+    <input class="user-info-input" id="phone-input" type="text" placeholder="get.phone">
+    <button class="user-info-save" id="phone-save">
+      Save
+    </button>
+  </div>
+  <form action="#" class="user-info-horizontal">
+    <p class="user-info-text">
+      Gender:
+    </p>
+    <select name="gender" id="gender" class="gender-drop-down">
+      <option value="blank" selected="selected">Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Rather not say</option>
+    </select>
+    <button class="user-info-save" id="gender-save">
+      Save
+    </button>
+  </form>
+  <div class="user-info-horizontal">
+    <p class="user-info-text">
+      Profile Picture:
+    </p>
+    <div class="upload-image">
+      <button class="choose-file-button">
+        Choose File
+      </button>
+      <p class="profile-picture-file-path">
+        placeholder
+      </p>
+    </div>
+    <button class="user-info-save" id="profile-picture-save">
+      Save
+    </button>
+  </div>
+</div>
+<div class="all-user-articles">
+  <button class="change-article" id="prev-article">
+    Previous
+  </button>
+  <div class="article-preview-placeholder">
+    <img src="Assets/placeholder-image.png" alt="" class="article-preview-placeholder-help">
+  </div>
+  <button class="change-article" id="next-article">
+    Next
+  </button>
+</div>
+<div class="create-article">
+  <button class="create-article-button" onclick="document.location='add_new_article'">
+    Create a new Article
+  </button>
+</div>
+</body>
+</html>

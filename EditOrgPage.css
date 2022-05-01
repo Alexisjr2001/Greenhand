@@ -1,0 +1,128 @@
+.my-org{
+    font-size: 30px;
+    text-align: center;
+}
+
+
+
+.descriptions,.email-section,.phone-numbers-section,.multimedia-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.short-description-text-area,.long-description-text-area{
+    resize: none;
+    width: 500px;
+    height: 200px;
+}
+
+.long-description-text,.short-description-text,.emails-text,.phone-text,.choose-multimedia{
+    justify-self: end;
+    margin: 0px 10px 0px 0px;
+}
+
+.all-emails,.all-phones,.all-multimedia{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+.email-field,.phone-field,.multimedia-field{
+    display:flex;
+    width:500px;
+    justify-content: space-between;
+    margin-bottom:5px;
+}
+
+.email-address,.phone-number,.multimedia{
+    margin:0px 0px 0px 0px
+}
+
+.remove-email,.save-email,.remove-phone,.save-phone,.remove-multimedia,.save-multimedia{
+    height: fit-content;
+    width: fit-content;
+}
+
+.add-email-section,.add-phone-section,.add-multimedia-section{
+    display:flex;
+    width:500px;
+    justify-content: space-between;
+    margin-bottom:5px;
+}
+
+.input-email,.input-phone{
+    margin: 0px 0px 0px 0px;
+    width:250px;
+}
+
+.save-multimedia{
+    height: fit-content;
+    width: fit-content;
+}
+
+.multimedia-file-path{
+    margin: 0px 0px 0px 0px;
+}
+
+.article-activity-drop-down{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    font-size: 16px;
+    border-radius: 3px;
+    border-width: 1px;
+    height: fit-content;
+    margin-right: 10px;
+}
+
+.article-activity-drop-down-menu{
+    width: 80px;
+}
+
+.articles-activities{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.change-article-activity{
+    padding: 10px 20px 10px 20px;
+    width:100px;
+    height:40px;
+    align-self: center;
+    margin: 0px 5px 0px 5px;
+}
+
+.article-activity-preview-placeholder{
+    width: 300px;
+    height:500px;
+    overflow: hidden;
+}
+
+.article-activity-preview-placeholder-help{
+    height: 500px;
+    background-size:cover;
+    background-position:center;
+}
+
+.content-buttons,.bottom-buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    column-gap: 20px;
+    margin-bottom: 10px;
+}
+
+.add-to-list,.remove-content{
+    width: 150px;
+    height: fit-content;
+}
+.add-to-list,.cancel{
+    justify-self: start;
+    align-self: center;
+}
+
+.remove-content,.save-changes{
+    justify-self: end;
+}
+
+
+

@@ -1,0 +1,102 @@
+.activity-name{
+    font-size: 30px;
+    text-align: center;
+}
+
+.organization-name{
+    font-size: 14px;
+    text-align: center;
+}
+
+.activity-content{
+    display: flex;
+    justify-content: center;
+}
+
+.change-photo{
+    padding: 10px 20px 10px 20px;
+    width:100px;
+    height:40px;
+    align-self: center;
+    margin: 0px 5px 0px 5px;
+}
+
+.photos{
+    display: flex;
+    justify-content: center;
+}
+
+.activity-photo-placeholder-help{
+    height: 300px;
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.empty{
+    flex: 1;
+}
+
+.participate-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+.map{
+    object-fit: contain;
+    width: 200px;
+    margin-bottom: 10px;
+}
+.participate{
+    width: 80px;
+    height: fit-content;
+}
+
+.blank-left{
+
+}
+
+.activity-basic-info{
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    justify-content: space-between;
+}
+
+
+.info-middle{
+    flex:8fr;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+.categories{
+    flex:1fr;
+    display: flex;
+    flex-direction: column;
+    margin-right:10px;
+}
+
+.info-row{
+    display: flex;
+}
+
+.row-name{
+    width: 150px;
+}
+
+.row-text{
+
+}
+
+.detailed-description{
+    border-radius: 4px;
+    border:1px solid black;
+    margin: 0px 200px 0px 200px;
+}
+
+.details{
+    margin: 5px 10px 5px 10px;
+}

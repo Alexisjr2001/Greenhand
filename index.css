@@ -4,16 +4,18 @@ html {
 
 body {
     margin: 0em;
+    /* left: 0;
+    right: 0; */
 }
 
 /*--------------------------------------------HEADER CSS----------------------------------------------*/
 header {
     background-color: #4AB56F;
     display: flex;
-    padding-left: 15em;
-    padding-right: 15em;
+    padding-left: 0em;
+    padding-right: 0em;
     box-shadow: 0 5px 10px rgba(84, 132, 73, 0.475);
-
+    flex-grow: 1;
     justify-content: center;
 
     /* position: fixed; */
@@ -21,7 +23,24 @@ header {
     left: 0;
     right: 0;
     position:sticky;
+
+    z-index: 999;
 }
+
+@media only screen and (min-width: 1440px) {
+    header {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    header {
+        padding-left: 15em;
+        padding-right: 15em;
+    }
+}
+
 header>* { /* Children of header*/
     display:flex;
     flex:1;
@@ -40,8 +59,13 @@ header>* { /* Children of header*/
     color: black;
     padding: .7em;
     border-radius: 1em;
-
     transition: all .5s;
+}
+
+@media only screen and (max-width: 935px) {
+    #header-links {
+        display: none;
+    }
 }
 
 #header-links>a:hover, #header-sign-up>a:hover{
@@ -56,6 +80,7 @@ header>* { /* Children of header*/
     margin-left: 1em;
     margin-right: 1em;
     /* min-width: 2em; */
+
     text-align: center;
 }
 #header-sign-up>a {
@@ -63,6 +88,9 @@ header>* { /* Children of header*/
     padding-left:.3em;
     margin-left: .3em;
     margin-right: .3em;
+    
+    border-style: dotted;
+    border-color: rgb(19, 79, 39);
 }
 #header-links {
     justify-content: center;
@@ -70,7 +98,11 @@ header>* { /* Children of header*/
 }
 
 #header-sign-up {
-    justify-content:right;
+    justify-content: center;
+    
+    border-radius: 3em;
+    border-style: dotted;
+    border-color: rgb(19, 79, 39);
 }
 
 /*--------------------------------------------MAIN PAGE CSS----------------------------------------------*/
@@ -78,43 +110,90 @@ header>* { /* Children of header*/
 #main-page-container {
     display: flex;
     flex-direction: column;
-    padding-left: 18em;
-    padding-right: 18em;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .section-card {
     display: flex;
+    
+    margin-top: 3em;
+    margin-bottom: 3em;
+    padding: 1em;
+
     box-shadow: 0 0 10px 5px rgba(73, 107, 132, 0.315);
-    margin: 5em;
     border-radius: .5em;
+}
+
+@media only screen and (min-width: 1024px) {
+    #main-page-container {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+
+    .section-card {
+        margin-top: 3em;
+        margin-bottom: 3em;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    #main-page-container {
+        padding-left: 9em;
+        padding-right: 9em;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    #main-page-container {
+        padding-left: 15em;
+        padding-right: 15em;
+    }
 }
 
 /*------------------------------------Join Us CSS--------------------------------------*/
 
 #join-us>img {
     margin: 1em;
-    max-width: auto;
-    max-height: 20em;
+    align-self: center;
+    display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+    #join-us>img {
+        display: block;
+        max-height: 15em;
+    }
 }
 
 #join-us-container {
     display: flex;
     flex-direction: column;
-    margin: 2em;
+}
+
+#join-us-container>h1 {
+    align-self: center;
+    text-align: center;
+    margin: 0em;
+}
+
+#join-us-container>p {
+    align-self: center;
+    text-align: center;
 }
 
 #join-button-container {
     display: flex;
     justify-content: center;
-    min-width: auto;
+    /* min-width: auto; */
     flex: 1;
     
     align-items: center;
 }
 
 #join-button-container>a {
-    margin-left: 3em;
-    margin-right: 3em;
+    margin-left: .3em;
+    margin-right: .3em;
     padding: .7em;
     border-radius: 1em;
     background-color: rgb(19, 130, 209);
@@ -124,21 +203,31 @@ header>* { /* Children of header*/
     transition: all .5s;
 }
 
+@media only screen and (min-width: 425px) {
+    #join-button-container>a {
+        margin-left: 1.5em;
+        margin-right: 1.5em;
+    }
+}
+
 #join-button-container>a:hover {
     background-color: rgb(42, 80, 123);
 }
 
-/*------------------------------------Our Activities CSS--------------------------------------*/
-#our-activities{
+/*------------------------------------Our Activities CSS & Our Articles--------------------------------------*/
+#our-activities,#our-articles{
     flex-direction: column;
-    padding: 2em;
+    /* padding: 2em; */
 }
-#our-activities>h1, #our-activities>p {
+#our-activities>h1, #our-activities>p, #our-articles>h1, #our-articles>p  {
     text-align: center;
 }
 
-#activity-card-container {
+#activity-card-container, #article-card-container {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .activity-card {
@@ -147,6 +236,7 @@ header>* { /* Children of header*/
     align-items: center;
 
     margin: 2em;
+    padding: 1em;
     box-shadow: 0px 5px 10px 5px rgba(78, 78, 78, 0.479);
     border-radius: 1em;
 
@@ -158,8 +248,20 @@ header>* { /* Children of header*/
 
 .activity-card>img {
     max-height: auto;
-    max-width: 200px;
+    max-width: 10em;
 }
+
+.activity-card>p {
+    max-width: 16em;
+    /* margin: 0em; */
+}
+
+@media only screen and (min-width: 768px) {
+    .activity-card>img {
+        max-width: 16em;
+    }
+}
+
 
 .activity-card>p {
     margin: 1.5em;
@@ -179,22 +281,27 @@ header>* { /* Children of header*/
 
 #detailed-activities-title-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 #detailed-activities-title {
-
+    text-align: center;
 }
-
 #detailed-activities-switch-container {
-    
+    /* display: none; */
+    /* margin-left: auto; */
+    /* margin-right: 3em; */
+    align-self: flex-end
 }
 
 #detailed-activities-locations-container, #detailed-activities-type-container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -207,7 +314,13 @@ header>* { /* Children of header*/
     margin-left: 2em;
     margin-right: 2em;
     margin-top: 1em;
-    max-width: 300px;
+    max-width: 10em;
+}
+
+@media only screen and (min-width: 1440px) {
+    .detailed-activities-link>img {
+        max-width: 16em;
+    }
 }
 
 .detailed-activities-link>p {
@@ -216,4 +329,26 @@ header>* { /* Children of header*/
 
 #detailed-activities-type-container>a {
     display: none;
+}
+
+/*--------------------------------------------FOOTER CSS----------------------------------------------*/
+
+footer {
+    background-color: #4AB56F;
+    display: flex;
+    /* padding-left: 15em;
+    padding-right: 15em; */
+    min-height: 10em;
+    box-shadow: 0 5px 10px rgba(84, 132, 73, 0.475);
+
+    justify-content: center;
+
+    /* position: fixed; */
+    /* top: 0; */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* position:sticky; */
+
+    z-index: 999;
 }

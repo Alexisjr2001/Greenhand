@@ -8,7 +8,20 @@ function addFlexDisplayOnChildren(element) {
 function switchDetailedActivities() {
     const locaCont = document.getElementById("detailed-activities-locations-container");
     const typeCont = document.getElementById("detailed-activities-type-container");
-    const title = document.getElementById("detailed-activities-title")
+    const title = document.getElementById("detailed-activities-title");
+    const switchButton = document.getElementById("detailed-activities-switch");
+    const switchSlider = document.getElementById("detailed-activities-switch-slider");
+    
+    
+    switchSlider.style["opacity"] = 0.3;
+    switchButton.disabled=true;
+    switchSlider.style["cursor"] = 'auto';
+    setTimeout( () => {
+        switchSlider.style["opacity"] = 1;
+        switchSlider.style["cursor"] = 'pointer';
+        switchButton.disabled=false;
+    }, 1000)
+
     if (locaCont.children[0].classList.contains("invisible")) {
         for (let i = 0; i < locaCont.children.length; i++) {
             locaCont.children[i].classList.remove("invisible");

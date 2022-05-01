@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="miscellaneous.css">
@@ -61,8 +62,8 @@
                 <h1 id="detailed-activities-title">Locations</h1>
                 <div id="detailed-activities-switch-container">
                     <label class="switch">
-                        <input type="checkbox" onclick="switchDetailedActivities()">
-                        <span class="slider round"></span>
+                        <input type="checkbox" onclick="switchDetailedActivities()" id="detailed-activities-switch">
+                        <span class="slider round" id="detailed-activities-switch-slider"></span>
                       </label>
                 </div>
             </div>
@@ -95,6 +96,30 @@
                 </a>
             </div>
         </section>
+        <section class="section-card" id="our-articles">
+            <h1>Our Articles</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sed ipsum et praesentium autem repellat.</p>
+            <div id="article-card-container">
+                <a class="activity-card" href="">
+                    <h1>Article 1</h1>
+                    <img src="Assets/placeholder-image.png" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, assumenda.</p>
+                </a>
+                <a class="activity-card" href="">
+                    <h1>Article 2</h1>
+                    <img src="Assets/placeholder-image.png" alt="">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, illum!</p>
+                </a>
+                <a class="activity-card" href="">
+                    <h1>Article 3</h1>
+                    <img src="Assets/placeholder-image.png" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, nihil.</p>
+                </a>
+            </div>
+        </section>
     </div>
+    <footer>
+        
+    </footer>
 </body>
 </html>

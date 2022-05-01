@@ -63,11 +63,11 @@ border-radius: 50%;
 }
 
 .invisible {
-    animation: shrink .7s linear 0s 1 normal forwards;
+    animation: shrink .7s linear 0s 1 normal;
 }
 
 .visible {
-    animation: grow .3s linear 0s 1 normal forwards;
+    animation: grow .3s linear 0s 1 normal;
 }
 
 @keyframes shrink {

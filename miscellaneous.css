@@ -79,3 +79,100 @@ border-radius: 50%;
     0% {transform: scale(0);}
     99.99% { transform: scale(1);}
 }
+
+/*--------------------------------------------HEADER CSS----------------------------------------------*/
+header {
+    background-color: #4AB56F;
+    display: flex;
+    padding-left: 0em;
+    padding-right: 0em;
+    box-shadow: 0 5px 10px rgba(84, 132, 73, 0.475);
+    flex-grow: 1;
+    justify-content: center;
+
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    right: 0;
+    position:sticky;
+
+    z-index: 999;
+}
+
+@media only screen and (min-width: 1440px) {
+    header {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    header {
+        padding-left: 15em;
+        padding-right: 15em;
+    }
+}
+
+header>* { /* Children of header*/
+    display:flex;
+    flex:1;
+    align-items: center;
+
+    min-height: 2em;
+    max-height: 3em;
+}
+
+.GH_logo {
+    max-height: 3em;
+}
+
+#header-links>a, #header-sign-up>a{
+    text-decoration: none;
+    color: black;
+    padding: .7em;
+    border-radius: 1em;
+    transition: all .5s;
+}
+
+@media only screen and (max-width: 935px) {
+    #header-links {
+        display: none;
+    }
+}
+
+#header-links>a:hover, #header-sign-up>a:hover{
+    text-decoration: none;
+    color: black;
+    background-color: #2e9352;
+}
+
+#header-links>a{
+    padding-right: 1em;
+    padding-left: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    /* min-width: 2em; */
+
+    text-align: center;
+}
+#header-sign-up>a {
+    padding-right: .3em;
+    padding-left:.3em;
+    margin-left: .3em;
+    margin-right: .3em;
+    
+    border-style: dotted;
+    border-color: rgb(19, 79, 39);
+}
+#header-links {
+    justify-content: center;
+    flex: 3;
+}
+
+#header-sign-up {
+    justify-content: center;
+    
+    border-radius: 3em;
+    border-style: dotted;
+    border-color: rgb(19, 79, 39);
+}

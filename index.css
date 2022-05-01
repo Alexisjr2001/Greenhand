@@ -93,7 +93,7 @@ header>* { /* Children of header*/
 
 #join-us>img {
     margin: 1em;
-    max-width: auto;
+    max-width: none;
     max-height: 20em;
 }
 
@@ -157,7 +157,7 @@ header>* { /* Children of header*/
 }
 
 .activity-card>img {
-    max-height: auto;
+    max-height: none;
     max-width: 200px;
 }
 

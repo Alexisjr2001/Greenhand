@@ -208,7 +208,7 @@ header>* { /* Children of header*/
     }
 
     #mobile-dropdown-menu{
-        display: flex;
+        display: none;
         /* align-self: flex-end; */
         margin-top: .7em;
         justify-content: center;

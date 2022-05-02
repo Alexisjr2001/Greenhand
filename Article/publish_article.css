@@ -1,0 +1,364 @@
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/*--------------------------------------------HEADER CSS----------------------------------------------*/
+header {
+    background-color: #4AB56F;
+    display: flex;
+    padding-left: 15em;
+    padding-right: 15em;
+    box-shadow: 0 5px 10px rgba(84, 132, 73, 0.475);
+
+    justify-content: center;
+
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    right: 0;
+    position:sticky;
+}
+header>* { /* Children of header*/
+    display:flex;
+    flex:1;
+    align-items: center;
+
+    min-height: 2em;
+    max-height: 3em;
+}
+
+.GH_logo {
+    max-height: 3em;
+}
+
+#header-links>a, #header-sign-up>a{
+    text-decoration: none;
+    color: black;
+    padding: .7em;
+    border-radius: 1em;
+
+    transition: all .5s;
+}
+
+#header-links>a:hover, #header-sign-up>a:hover{
+    text-decoration: none;
+    color: black;
+    background-color: #2e9352;
+}
+
+#header-links>a{
+    padding-right: 1em;
+    padding-left: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    /* min-width: 2em; */
+    text-align: center;
+}
+#header-sign-up>a {
+    padding-right: .3em;
+    padding-left:.3em;
+    margin-left: .3em;
+    margin-right: .3em;
+}
+#header-links {
+    justify-content: center;
+    flex: 3;
+}
+
+#header-sign-up {
+    justify-content:right;
+}
+
+
+/*--------------------------------------------MAIN PAGE CSS----------------------------------------------*/
+
+h1 {
+    text-align: center;
+    background-image: url("https://images.unsplash.com/photo-1536147116438-62679a5e01f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGdyZWVufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+    width: 100%;
+    height: 2em;
+    font-size: 3em;
+    color: white;
+    padding-top: 0.7em;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    border: .1em solid rgb(74, 181, 111);
+    border-radius: 1em;
+    width: 80%;
+    padding: 1em;
+    background-color: #fafcfa;
+    box-shadow: 0 5px 10px 5px rgba(78, 78, 78, 0.479);
+}
+
+
+.label {
+    font-size: 3em;
+    flex-shrink: 3;
+    width: 30%;
+}
+
+#title_container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#title_label {
+    width: 30%;
+}
+
+#title {
+    width: 50%;
+    font-size: 1.5em;
+    margin-left: 50px;
+    border-radius: 1em;
+    background-color: #f2f2f2;
+    border: 2px solid #2e9352;
+}
+
+#category_container, #description_container, #detailed_container{
+    display: flex;
+    width: 100%;
+    padding: 15px;
+}
+
+#category_checkbox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 20%;
+    flex-grow: 3;
+    padding-left: 1.5rem;
+}
+
+#category_checkbox div{
+    display: flex;
+    font-size: 1.5em;
+}
+
+#Sustainable_agriculture, #Marine_conservation, #Nature_conservation, #Renewable_energy, #Reforestation {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.check_box_label:hover, .check_box_label:focus {
+    background-color: #f2f2f2;
+    color: #1b8503;
+    box-shadow: 0 0.5em 0.5em -0.4em #680d7a;
+    transform: translateY(-0.1em);
+    cursor: pointer;
+}
+
+#description_container textarea {
+    width: 90%;
+    height: 15em;
+    background-color: #f2f2f2;
+    padding: 12px 20px;
+    border: 2px solid #2e9352;
+    border-radius: 1em;
+    font-size: 16px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#detailed_container textarea {
+    width: 90%;
+    height: 30em;
+    background-color: #f2f2f2;
+    padding: 12px 20px;
+    border: 2px solid #2e9352;
+    border-radius: 1em;
+    font-size: 16px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#multimedia_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+}
+
+input[type="file"] {
+    display: none;
+}
+#multimedia_button {
+    border: 2px solid #2e9352;
+    border-radius: 1em;
+    display: flex;
+    justify-content: flex-end;
+    padding: 6px 12px;
+    margin-left: 2em;
+    margin-top: 1em;
+    background-color: #f2f2f2;
+    transition: all 0.35s;
+}
+
+#multimedia_button:hover, #multimedia_button:focus, #multimedia_button:active {
+    background-color: #2e9352;
+    color: white;
+    box-shadow: 0 0.5em 0.5em -0.4em #2e95d2;
+    transform: translateY(-0.25em);
+    cursor: pointer;
+}
+
+#button_container {
+    width: 100%;
+    height: 4em;
+    margin: 6em auto 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+#cancel {
+    color: #d30909;
+    background-color: #f2f2f2;
+    border: 2px solid;
+    border-radius: 1em;
+    padding: 1em 2em;
+    font-size: 1em;
+    transition: all 0.25s;
+    margin-left: 2%;
+    text-decoration: none;
+}
+
+#cancel:hover, #cancel:focus, #cancel:active {
+    background-color: #f2f2f2;
+    color: #d30909;
+    box-shadow: 0 0.5em 0.5em -0.4em #2e95d2;
+    transform: translateY(-0.15em);
+    cursor: pointer;
+}
+
+
+#submit {
+    color: #12a131;
+    background-color: #f2f2f2;
+    border: 2px solid;
+    border-radius: 1em;
+    padding: 1em 2em;
+    font-size: 1em;
+    transition: all 0.25s;
+    margin-right: 8%;
+}
+
+#submit:hover, #submit:focus, #submit:active {
+    background-color: #f2f2f2;
+    color: rgba(92, 129, 2, 0.84);
+    box-shadow: 0 0.5em 0.5em -0.4em #2e95d2;
+    transform: translateY(-0.15em);
+    cursor: pointer;
+}
+
+@media (max-width: 960px) {
+    .label {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .container {
+        justify-content: center;
+    }
+
+    .form {
+        padding-left: 0.2em;
+    }
+
+    #title {
+        font-size: 1em;
+        margin-left: 5px;
+        border: 1px solid #ccc;
+    }
+
+    #category_checkbox div{
+        font-size: medium;
+    }
+
+    .label{
+        font-size: 2em;
+    }
+
+    #description_container textarea {
+        margin-right: 10px;
+    }
+    #detailed_container textarea {
+        margin-right: 10px;
+    }
+
+    #category_checkbox {
+        flex-direction: row;
+    }
+
+    #Sustainable_agriculture, #Marine_conservation, #Nature_conservation, #Renewable_energy, #Reforestation {
+        width: 1em;
+        height: 1em;
+    }
+
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1em;
+    }
+    #title {
+        font-size: 0.85em;
+        margin-left: 5px;
+        border: 1px solid #ccc;
+    }
+
+    #category_checkbox div{
+        font-size: small;
+    }
+    .label{
+        font-size: 1em;
+    }
+
+    #description_container textarea {
+        margin-right: 5px;
+    }
+    #detailed_container textarea {
+        margin-right: 5px;
+    }
+    #category_checkbox {
+        flex-direction: row;
+    }
+
+    #Sustainable_agriculture, #Marine_conservation, #Nature_conservation, #Renewable_energy, #Reforestation {
+        width: 0.8em;
+        height: 0.8em;
+    }
+}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Publish Article</title>
+    <link rel="stylesheet" href="publish_article.css">
+</head>
+<body>
+    <header>
+        <div><a href="../index.html"><img src="../Assets/logo-placeholder.png" alt="" class="GH_logo"></a></div>
+        <nav id="header-links">
+            <a href="#our-activities">Our Activities</a>
+            <a href="#our-articles">Our Articles</a>
+            <a href="">About Us</a>
+            <a href="#contact-us">Contact Us</a>
+        </nav>
+        <div id="header-sign-up">
+            <a href="">Sign Up</a>
+            <a href="">Log In</a>
+        </div>
+    </header>
+    <main>
+        <h1>Publish an Article</h1>
+        <section class="container">
+            <form action="/" class="form">
+                <div id="title_container">
+                <label for="title" class="label" id="title_label">Title:</label>
+                <input type="text" name="title" id="title" required>
+                </div>
+                <div id="category_container">
+                    <p class="label">Article's category/ies:</p>
+                    <div id="category_checkbox">
+                        <div>
+                        <input type="checkbox" id="Sustainable_agriculture" name="Sustainable_agriculture">
+                        <label for="Sustainable_agriculture" class="check_box_label">Sustainable agriculture</label>
+                        </div>
+                        <div>
+                        <input type="checkbox" id="Marine_conservation" name="Marine_conservation">
+                        <label for="Marine_conservation" class="check_box_label">Marine conservation</label>
+                        </div>
+                        <div>
+                        <input type="checkbox" id="Nature_conservation" name="Nature_conservation">
+                        <label for="Nature_conservation" class="check_box_label">Nature conservation</label>
+                        </div>
+                        <div>
+                        <input type="checkbox" id="Renewable_energy" name="Renewable_energy">
+                        <label for="Renewable_energy" class="check_box_label">Renewable energy</label>
+                        </div>
+                        <div>
+                        <input type="checkbox" id="Reforestation" name="Reforestation">
+                        <label for="Reforestation" class="check_box_label">Reforestation</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="description_container">
+                    <label for="description" class="label">Description:</label>
+                    <textarea name="description" id="description" cols="30" rows="10" placeholder="Give a brief description of your article"></textarea>
+                </div>
+                <div id="detailed_container">
+                    <label for="detailed" class="label">Detailed Article:</label>
+                    <textarea name="detailed" id="detailed" cols="30" rows="10" placeholder="Compose your article's main body here"></textarea>
+                </div>
+                <div>
+                    <div id="multimedia_container">
+                    <div class="label">Multimedia:</div>
+                    <label for="multimedia" id="multimedia_button">Choose Files</label>
+                    <input type="file" id="multimedia" name="multimedia" accept="image/png, image/jpeg, video/mp4">
+                    </div>
+                </div>
+                <section id="button_container">
+                    <a href="../index.html" id="cancel">Cancel</a>
+                    <button type="submit" id="submit">Publish</button>
+                </section>
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>

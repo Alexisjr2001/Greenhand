@@ -9,7 +9,7 @@ body {
 }
 
 /*--------------------------------------------HEADER CSS----------------------------------------------*/
-header {
+/* header {
     background-color: #4AB56F;
     display: flex;
     padding-left: 0em;
@@ -18,7 +18,6 @@ header {
     flex-grow: 1;
     justify-content: center;
 
-    /* position: fixed; */
     top: 0;
     left: 0;
     right: 0;
@@ -39,9 +38,10 @@ header {
         padding-left: 15em;
         padding-right: 15em;
     }
-}
+} */
 
-header>* { /* Children of header*/
+/* Children of header*/
+/* header>* { 
     display:flex;
     flex:1;
     align-items: center;
@@ -79,7 +79,6 @@ header>* { /* Children of header*/
     padding-left: 1em;
     margin-left: 1em;
     margin-right: 1em;
-    /* min-width: 2em; */
 
     text-align: center;
 }
@@ -103,7 +102,7 @@ header>* { /* Children of header*/
     border-radius: 3em;
     border-style: dotted;
     border-color: rgb(19, 79, 39);
-}
+} */
 
 /*--------------------------------------------MAIN PAGE CSS----------------------------------------------*/
 

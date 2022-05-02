@@ -1,5 +1,5 @@
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
 }
 
 body {
@@ -184,7 +184,6 @@ body {
 #join-button-container {
     display: flex;
     justify-content: center;
-    /* min-width: auto; */
     flex: 1;
     
     align-items: center;
@@ -229,6 +228,22 @@ body {
     justify-content: center;
 }
 
+.activity-card>img {
+    /* max-height: auto; */
+    max-width: 10em;
+}
+
+.activity-card>p {
+    max-width: 16em;
+    /* margin: 0em; */
+}
+
+@media only screen and (min-width: 768px) {
+    .activity-card>img {
+        max-width: 16em;
+    }
+}
+
 .activity-card {
     display: flex;
     flex-direction: column;
@@ -244,23 +259,6 @@ body {
 
     transition: all .5s;
 }
-
-.activity-card>img {
-    max-height: auto;
-    max-width: 10em;
-}
-
-.activity-card>p {
-    max-width: 16em;
-    /* margin: 0em; */
-}
-
-@media only screen and (min-width: 768px) {
-    .activity-card>img {
-        max-width: 16em;
-    }
-}
-
 
 .activity-card>p {
     margin: 1.5em;

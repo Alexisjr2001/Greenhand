@@ -129,7 +129,7 @@ p {
     margin-left: 3em;
 }
 
-img {
+.ell>img {
     border-radius: 1em;
     max-width: 450px;
     height: auto;
@@ -174,7 +174,7 @@ button:hover, button:active, button:focus {
         margin-left: 0;
     }
 
-    img {
+    .ell>img {
         width: 80%;
         height: 15em;
     }
@@ -200,7 +200,7 @@ button:hover, button:active, button:focus {
         padding: 0.8em;
     }
 
-    img {
+    .ell>img {
         width: 65%;
         height: 10em;
     }

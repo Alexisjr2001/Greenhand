@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Publish Article</title>
     <link rel="stylesheet" href="publish_article.css">
+    <link rel="stylesheet" href="../miscellaneous.css">
+    <script src="../index.js"></script>
 </head>
 <body>
     <header>
@@ -14,12 +16,23 @@
         <nav id="header-links">
             <a href="#our-activities">Our Activities</a>
             <a href="#our-articles">Our Articles</a>
-            <a href="../About_Us/about_us.html">About Us</a>
+            <a href="About_Us/about_us.html">About Us</a>
             <a href="#contact-us">Contact Us</a>
         </nav>
+        <div id="mobile-dropdown">
+            <div id="img-container" onclick="toggleDropdownMenu()">
+                <img src="../Assets/dropdown-menu.png" alt="">
+                <div id="mobile-dropdown-menu" class="section-card">
+                    <a href="../index.html#our-activities">Our Activities</a>
+                    <a href="../index.html#our-articles">Our Articles</a>
+                    <a href="../About_Us/about_us.html">About Us</a>
+                    <a href="../index.html#contact-us">Contact Us</a>
+                </div>
+            </div>
+        </div>
         <div id="header-sign-up">
-            <a href="">Sign Up</a>
-            <a href="">Log In</a>
+            <a href="signupvols/signupvols.html">Sign Up</a>
+            <a href="login/index.html">Log In</a>
         </div>
     </header>
     <main>

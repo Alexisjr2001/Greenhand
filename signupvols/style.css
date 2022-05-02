@@ -11,6 +11,8 @@ body{
   align-items: center;
   justify-content: center;
   background: #5ab95a;
+
+  transition: opacity 0.5s;
 }
 .wrapper{
   position: relative;

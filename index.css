@@ -335,19 +335,15 @@ body {
 footer {
     background-color: #4AB56F;
     display: flex;
-    /* padding-left: 15em;
-    padding-right: 15em; */
     min-height: 10em;
     box-shadow: 0 5px 10px rgba(84, 132, 73, 0.475);
 
     justify-content: center;
 
-    /* position: fixed; */
-    /* top: 0; */
     left: 0;
     right: 0;
     bottom: 0;
-    /* position:sticky; */
+
 
     z-index: 999;
 }

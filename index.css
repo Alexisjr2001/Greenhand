@@ -269,7 +269,7 @@ body {
     transform: translateY(-10px) translateX(5px);
 }
 
-#publish-activity {
+.publish-something {
     text-align: center;
     text-decoration: none;
     color: rgb(19, 130, 209);
@@ -278,7 +278,7 @@ body {
     align-self: center;
 }
 
-#publish-activity:hover{
+.publish-something:hover{
     text-decoration:underline;
     transition: all 0.5s;
 }
@@ -342,58 +342,4 @@ body {
 
 #detailed-activities-type-container>a {
     display: none;
-}
-
-/*--------------------------------------------FOOTER CSS----------------------------------------------*/
-
-footer {
-    background-color: #4AB56F;
-    display: flex;
-    flex-direction: column;
-    min-height: 10em;
-    box-shadow: 0 5px 10px rgba(84, 132, 73, 0.475);
-
-    justify-content: center;
-
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-
-    z-index: 999;
-}
-#footer-title-container {
-    text-align: center;
-}
-#footer-details-container {
-    margin-left: 3em;
-
-    display: flex;
-    flex-direction: row;
-    /* flex-wrap: wrap; */
-}
-
-#follow-us {
-    margin-left: auto;
-    margin-right: 3em;
-    display: flex;
-    flex-direction: column;
-}
-
-#follow-us-title {
-    text-align: center;
-    font-size: large;
-}
-
-#follow-us-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-#follow-us-links>a>img {
-    max-width: auto;
-    max-height: 3em;
-    margin: .3em;
 }

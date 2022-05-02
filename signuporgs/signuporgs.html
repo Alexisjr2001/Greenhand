@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="signup.js"></script>
+   </head>
+<body>
+  <div class="wrapper">
+    <h2>Sign Up</h2>
+    <h5>for Organizations</h5>
+    <label class="toggle" for="myToggle">
+        <input class="toggle__input" name="" type="checkbox" id="myToggle" onclick="redirect()" checked>
+        <div class="toggle__fill"></div>
+    </label>
+    <form action="#">
+      <div class="input-box">
+        <input type="text" placeholder="Enter Organization's Name" required>
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="Enter Organization's Email" required>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Create Password" required>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Confirm Password" required>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Enter Organization's Country" required>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Enter Organization's City/Town" required>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Enter Organization's Phone Number" required>
+      </div>
+    <div class="input-box button" id="file-button-container">
+        <input type="file" id="file" accept="image/*">
+        <label for="file" id="file-upload-label">Upload a Photo</label>
+      </div>
+      <div class="input-box button">
+        <input type="Submit" value="Sign Up!">
+        <a href="../Organisation/OrganizationPage.html">Skip</a>
+      </div>
+      <div class="text">
+        <h3>Already have an account? <a href="#">Login now</a></h3>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

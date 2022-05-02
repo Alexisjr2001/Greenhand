@@ -269,6 +269,20 @@ body {
     transform: translateY(-10px) translateX(5px);
 }
 
+#publish-activity {
+    text-align: center;
+    text-decoration: none;
+    color: rgb(19, 130, 209);
+
+    /* max-width: 10em; */
+    align-self: center;
+}
+
+#publish-activity:hover{
+    text-decoration:underline;
+    transition: all 0.5s;
+}
+
 /*------------------------------------Our Activities Detailed CSS--------------------------------------*/
 
 #our-activities-detailed {

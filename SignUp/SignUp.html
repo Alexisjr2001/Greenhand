@@ -15,46 +15,46 @@
         <input class="toggle__input" name="" type="checkbox" id="myToggle" onclick="redirect()">
         <div class="toggle__fill"></div>
     </label>
-    <form action="SignUp.php" id="sign-up" method="get">
+    <form action="SignUp.php" id="sign-up" method="post" enctype="multipart/form-data">
         <div class="input-box">
-            <input type="text" id="name-field" placeholder="Enter your Name" required>
+            <input type="text" name="name" id="name-field" placeholder="Enter your Name" required>
         </div>
         <div class="input-box">
-            <input type="text" id="email-field" placeholder="Enter your Email" required>
+            <input type="text" name="email" id="email-field" placeholder="Enter your Email" required>
         </div>
         <div class="input-box">
-            <input type="password" placeholder="Create Password" required>
+            <input type="password" name="pwd" placeholder="Create Password" required>
         </div>
         <div class="input-box">
-            <input type="password" placeholder="Confirm Password" required>
+            <input type="password" name="pwd2" placeholder="Confirm Password" required>
         </div>
         <div class="input-box" id="age-div">
-            <input type="text" placeholder="Enter your Age" required>
+            <input type="text" name="age" placeholder="Enter your Age" required>
         </div>
         <div class="input-box">
-            <input type="text" id="country-field" placeholder="Enter your home Country" required>
+            <input type="text" name="country" id="country-field" placeholder="Enter your home Country" required>
         </div>
         <div class="input-box">
-            <input type="text" id="city-field" placeholder="Enter your City/Town" required>
+            <input type="text" name="city" id="city-field" placeholder="Enter your City/Town" required>
         </div>
         <div class="input-box">
-            <input type="text" id="phone-field" placeholder="Enter your Phone Number" required>
+            <input type="text" name="phone" id="phone-field" placeholder="Enter your Phone Number" required>
         </div>
         <div class="input-field" id="gender-div">
-            <label>Gender</label>
-            <select required>
-                <option disabled selected>Select gender</option>
-                <option>Male</option>
-                <option>Female</option>
-                <option>Others</option>
+            <label for="gender">Gender</label>
+            <select name="gender" id="gender" required>
+                <option value="" disabled selected>Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Others</option>
             </select>
         </div>
         <div class="input-box button" id="file-button-container">
-            <input type="file" id="file" accept="image/*">
+            <input type="file" name="photo" id="file" accept="image/*">
             <label for="file" id="file-upload-label">Upload a Photo</label>
         </div>
         <div class="input-box button">
-            <button id="submit-button" type="Submit" form="sign-up">Sign Up!</button>
+            <input type="submit" id="submit-button" name="submit" value="Sign Up!">
         </div>
     </form>
     <div class="text" id="to-login">

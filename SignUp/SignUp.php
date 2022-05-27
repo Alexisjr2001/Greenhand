@@ -103,7 +103,7 @@ if (isset($_POST["submit"])){
             if($fileError===0){
                 if($fileSize<25000000){//25MB
                     $fileNameNew = uniqid('',true).".".$fileActualExt;
-                    $fileDestination = '../Assets/'.$fileNameNew;
+                    $fileDestination = '../ProfilePictures/'.$fileNameNew;
                     move_uploaded_file($fileTmpName,$fileDestination);
                 }
                 else{
@@ -124,14 +124,6 @@ if (isset($_POST["submit"])){
     }
 
     include_once "../includes/DBConn.inc.php";
-    if(mysqli_connect_errno()){
-        $urlQuery["server"]="conn-error";
-        exitPHP($urlQuery);
-    }
-    if(!mysqli_ping($conn)){
-        $urlQuery["server"]="conn-dead";
-        exitPHP($urlQuery);
-    }
 
     $stmt=mysqli_stmt_init($conn);
 
@@ -158,6 +150,7 @@ if (isset($_POST["submit"])){
         $urlQuery["server"]="insert-error";
         exitPHP($urlQuery);
     }
+    $pwd=password_hash($pwd,PASSWORD_DEFAULT);
     if(isset($age) and isset($gender)){
         mysqli_stmt_bind_param($stmt,"sssisssis",$email,$pwd,$name,$phone,$country,$city,$fileDestination,$age,$gender);
     }

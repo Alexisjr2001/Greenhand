@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +35,14 @@
         </div>
         <div id="header-sign-up">
             <a href="SignUp/SignUp.html">Sign Up</a>
-            <a href="login/index.html">Log In</a>
+            <?php
+                if(isset($_SESSION['id'])){
+                    echo '<a href="LogIn/logout.php">Log Out</a>';
+                }
+                else{
+                    echo '<a href="LogIn/login.php">Log In</a>';
+                }
+            ?>
         </div>
     </header>
     <div id="main-page-container">

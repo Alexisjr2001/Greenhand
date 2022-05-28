@@ -1,7 +1,6 @@
-function redirect() {
+function transformPage() {
     document.querySelector('body').style.opacity = 0
     setTimeout(function() {
-        //window.location.href = "../signuporgs/signuporgs.html";
         if (document.getElementById("myToggle").checked){
             document.getElementById("type-of-user").innerHTML="for Organizations";
             document.getElementById("age-div").parentNode.removeChild(document.getElementById("age-div"));
@@ -17,4 +16,13 @@ function redirect() {
         }
         document.querySelector('body').style.opacity = "1";
     }, 500)
+}
+
+let urlString=window.location.search;
+let urlParams= new URLSearchParams(urlString);
+
+function checkSwitch(){
+    if(urlParams.has('switch') && urlParams.get('switch')=='on'){
+        document.getElementById("myToggle").click();
+    }
 }

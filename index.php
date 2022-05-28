@@ -14,37 +14,37 @@
     <script type="text/javascript" src="index.js"></script>
 </head>
 <body>
-    <header>
-        <div><a href=""><img src="Assets/logo-placeholder.png" alt="" class="GH_logo"></a></div>
-        <nav id="header-links">
-            <a href="#our-activities">Our Activities</a>
-            <a href="#our-articles">Our Articles</a>
-            <a href="About_Us/about_us.html">About Us</a>
-            <a href="#contact-us">Contact Us</a>
-        </nav>
-        <div id="mobile-dropdown">
-            <div id="img-container" onclick="toggleDropdownMenu()">
-                <img src="Assets/dropdown-menu.png" alt="">
-                <div id="mobile-dropdown-menu" class="section-card">
-                    <a href="#our-activities">Our Activities</a>
-                    <a href="#our-articles">Our Articles</a>
-                    <a href="About_Us/about_us.html">About Us</a>
-                    <a href="#contact-us">Contact Us</a>
-                </div>
+<header>
+    <div><a href=""><img src="Assets/logo-placeholder.png" alt="" class="GH_logo"></a></div>
+    <nav id="header-links">
+        <a href="#our-activities">Our Activities</a>
+        <a href="#our-articles">Our Articles</a>
+        <a href="About_Us/about_us.php">About Us</a>
+        <a href="#contact-us">Contact Us</a>
+    </nav>
+    <div id="mobile-dropdown">
+        <div id="img-container" onclick="toggleDropdownMenu()">
+            <img src="Assets/dropdown-menu.png" alt="">
+            <div id="mobile-dropdown-menu" class="section-card">
+                <a href="#our-activities">Our Activities</a>
+                <a href="#our-articles">Our Articles</a>
+                <a href="About_Us/about_us.php">About Us</a>
+                <a href="#contact-us">Contact Us</a>
             </div>
         </div>
-        <div id="header-sign-up">
-            <a href="SignUp/SignUp.html">Sign Up</a>
-            <?php
-                if(isset($_SESSION['id'])){
-                    echo '<a href="LogIn/logout.php">Log Out</a>';
-                }
-                else{
-                    echo '<a href="LogIn/login.php">Log In</a>';
-                }
-            ?>
-        </div>
-    </header>
+    </div>
+    <div id="header-sign-up">
+        <a href="SignUp/SignUp.html">Sign Up</a>
+        <?php
+        if(isset($_SESSION['id'])){
+            echo '<a href="LogIn/logout.php">Log Out</a>';
+        }
+        else{
+            echo '<a href="LogIn/login.php">Log In</a>';
+        }
+        ?>
+    </div>
+</header>
     <div id="main-page-container">
         <section class="section-card" id="join-us">
             <div id="join-us-container">
@@ -60,23 +60,23 @@
             <h1>Our Activities</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sed ipsum et praesentium autem repellat.</p>
             <div id="activity-card-container">
-                <a class="activity-card" href="Activity/activity_view.html">
+                <a class="activity-card" href="Activity/activity_view.php">
                     <h1>Example Activity</h1>
                     <img src="Assets/placeholder-image.png" alt="">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, assumenda.</p>
                 </a>
-                <a class="activity-card" href="Activity/activity_view.html">
+                <a class="activity-card" href="Activity/activity_view.php">
                     <h1>Activity 2</h1>
                     <img src="Assets/placeholder-image.png" alt="">
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, illum!</p>
                 </a>
-                <a class="activity-card" href="Activity/activity_view.html">
+                <a class="activity-card" href="Activity/activity_view.php">
                     <h1>Activity 3</h1>
                     <img src="Assets/placeholder-image.png" alt="">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, nihil.</p>
                 </a>
             </div>
-            <a href="Activity/publish_activity.html" class="publish-something">Publish an activity!</a>
+            <a href="Activity/publish_activity.php" class="publish-something">Publish an activity!</a>
         </section>
         <section class="section-card" id="our-activities-detailed">
             <div id="detailed-activities-title-container">
@@ -121,23 +121,23 @@
             <h1>Our Articles</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sed ipsum et praesentium autem repellat.</p>
             <div id="article-card-container">
-                <a class="activity-card" href="Article/article.html">
+                <a class="activity-card" href="Article/article.php">
                     <h1>Example Article</h1>
                     <img src="Assets/placeholder-image.png" alt="">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, assumenda.</p>
                 </a>
-                <a class="activity-card" href="Article/article.html">
+                <a class="activity-card" href="Article/article.php">
                     <h1>Article 2</h1>
                     <img src="Assets/placeholder-image.png" alt="">
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, illum!</p>
                 </a>
-                <a class="activity-card" href="Article/article.html">
+                <a class="activity-card" href="Article/article.php">
                     <h1>Article 3</h1>
                     <img src="Assets/placeholder-image.png" alt="">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, nihil.</p>
                 </a>
             </div>
-            <a href="Article/publish_article.html" class="publish-something">Publish an article!</a>
+            <a href="Article/publish_article.php" class="publish-something">Publish an article!</a>
         </section>
     </div>
     <footer id="contact-us">

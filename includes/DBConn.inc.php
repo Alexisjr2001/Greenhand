@@ -9,7 +9,7 @@
         $urlQuery["server"]="conn-error";
         exitPHP($urlQuery);
     }
-    if(!mysqli_ping($conn)){
-        $urlQuery["server"]="conn-dead";
+    if(!mysqli_ping($conn)) {
+        $urlQuery["server"] = "conn-dead";
         exitPHP($urlQuery);
     }

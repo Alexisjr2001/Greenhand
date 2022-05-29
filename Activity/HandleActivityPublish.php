@@ -8,6 +8,7 @@ if(isset($_POST['submit'])){
     $urlQuery=array();
     $title=$_POST['title'];
     $allCategories=$_POST['allCategories'];
+    $categories=array();
     if(isset($_POST['categories'])){
         $categories=$_POST['categories'];
     }
@@ -20,7 +21,7 @@ if(isset($_POST['submit'])){
     $endDate=$_POST['end_date'];
     $minDays=$_POST['min_days'];
     $requirements=$_POST['requirements'];
-    $recommenderFor=$_POST['recommended_for'];
+    $recommendedFor=$_POST['recommended_for'];
     $allMultimedia=$_FILES['multimedia'];
 
     if($title==""){
@@ -84,13 +85,10 @@ if(isset($_POST['submit'])){
     if($requirements==""){
         $urlQuery["requirements"]="empty";
     }
-    if($recommenderFor==""){
+    if($recommendedFor==""){
         $urlQuery["recommendedFor"]="empty";
     }
 
-    if (count($urlQuery)>0){
-        exitPHP($urlQuery);
-    }
     $uploadedFiles=array();
 
     if(count($_FILES['multimedia']['name'])>0){
@@ -115,20 +113,44 @@ if(isset($_POST['submit'])){
                     }
                     else{
                         $urlQuery['multimedia']="too-big";
+                        exitPHP($urlQuery);
                     }
                 }
                 else{
                     $urlQuery['multimedia']="err";
+                    exitPHP($urlQuery);
                 }
             }
             else{
                 $urlQuery['multimedia']="inv-ext";
+                exitPHP($urlQuery);
             }
         }
+    }
+
+    $json=json_encode(array('title'=>$title,'categories'=>$categories,'description'=>$description,'highlights'=>$highlights,'typicalDay'=>$typicalDay,'freeDay'=>$freeDay,'volunteers'=>$volunteers,'beginDate'=>$beginDate,'endDate'=>$endDate,'minDays'=>$minDays,'requirements'=>$requirements,'recommendedFor'=>$recommendedFor,'uploadedFiles'=>$uploadedFiles));
+    $jsonFileName=uniqid('',true).".json";
+    if(!file_put_contents("ActivityJSON/$jsonFileName",$json)){
+        $urlQuery["json"]="err";
+    }
+
+    if (count($urlQuery)>0){
+        exitPHP($urlQuery);
     }
 
     include_once "../includes/DBConn.inc.php";
 
     $stmt=mysqli_stmt_init($conn);
 
+    $insertJSON='INSERT INTO activities (activitiesJSON) values(?)';
+    if(!mysqli_stmt_prepare($stmt,$insertJSON)){
+        $urlQuery['server']="prepare-error";
+        exitPHP($urlQuery);
+    }
+    mysqli_stmt_bind_param($stmt,"s",$jsonFileName);
+    if(!mysqli_stmt_execute($stmt)){
+        $urlQuery['server']="insert-error";
+        exitPHP($urlQuery);
+    }
+    header("Location: publish_activity.php?creation=success");
 }

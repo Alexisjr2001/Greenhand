@@ -147,7 +147,7 @@ if (isset($_POST["submit"])){
         $insertAccount='INSERT INTO users (usersEmail,usersPwd,usersName,usersPhone,usersCountry,usersCity,usersImage) values(?,?,?,?,?,?,?);';
     }
     if(!mysqli_stmt_prepare($stmt,$insertAccount)){
-        $urlQuery["server"]="insert-error";
+        $urlQuery["server"]="prepare-error";
         exitPHP($urlQuery);
     }
     $pwd=password_hash($pwd,PASSWORD_DEFAULT);
@@ -157,7 +157,10 @@ if (isset($_POST["submit"])){
     else{
         mysqli_stmt_bind_param($stmt,"sssisss",$email,$pwd,$name,$phone,$country,$city,$fileDestination);
     }
-    mysqli_stmt_execute($stmt);
+    if(!mysqli_stmt_execute($stmt)){
+        $urlQuery['server']="insert-error";
+        exitPHP($urlQuery);
+    }
     header("Location: SignUp.html?acc=success");
 
 }

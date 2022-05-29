@@ -29,7 +29,7 @@ if(isset($_POST['submit'])){
     include_once "../includes/HandleFiles.php";
     $uploadedFiles=array();
     $folder="ArticleMultimedia/";
-    Handle($folder,$uploadedFiles);
+    Handle($folder,$uploadedFiles,$urlQuery);
 
     $json=json_encode(array('title'=>$title,'categories'=>$categories,'description'=>$description,'detailed'=>$detailed,'uploadedFiles'=>$uploadedFiles));
     $jsonFileName=uniqid('',true).".json";

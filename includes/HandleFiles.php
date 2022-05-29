@@ -1,5 +1,5 @@
 <?php
-function Handle($folder,&$uploadedFiles)
+function Handle($folder,&$uploadedFiles,&$urlQuery)
 {
     if (!empty($_FILES['multimedia']['name'])) {
         $num = count($_FILES['multimedia']['name']);

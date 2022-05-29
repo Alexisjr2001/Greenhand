@@ -92,7 +92,7 @@ if(isset($_POST['submit'])){
     include_once "../includes/HandleFiles.php";
     $uploadedFiles=array();
     $folder="ActivityMultimedia/";
-    Handle($folder,$uploadedFiles);
+    Handle($folder,$uploadedFiles,$urlQuery);
 
     $json=json_encode(array('title'=>$title,'categories'=>$categories,'description'=>$description,'highlights'=>$highlights,'typicalDay'=>$typicalDay,'freeDay'=>$freeDay,'volunteers'=>$volunteers,'beginDate'=>$beginDate,'endDate'=>$endDate,'minDays'=>$minDays,'requirements'=>$requirements,'recommendedFor'=>$recommendedFor,'uploadedFiles'=>$uploadedFiles));
     $jsonFileName=uniqid('',true).".json";

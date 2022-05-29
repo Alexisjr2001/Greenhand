@@ -1,13 +1,12 @@
 <?php
 function Handle($folder,&$uploadedFiles,&$urlQuery)
 {
-    if (!empty($_FILES['multimedia']['name'])) {
-        $num = count($_FILES['multimedia']['name']);
-        for ($i = 0; $i < $num; $i++) {
-            $fileName = $_FILES['multimedia']['name']["$i"];
-            $fileTmpName = $_FILES['multimedia']['tmp_name']["$i"];
-            $fileSize = $_FILES['multimedia']['size']["$i"];
-            $fileError = $_FILES['multimedia']['error']["$i"];
+    foreach($_FILES['multimedia']['error'] as $key=>$error){
+        if($error== UPLOAD_ERR_OK){
+            $fileName = $_FILES['multimedia']['name']["$key"];
+            $fileTmpName = $_FILES['multimedia']['tmp_name']["$key"];
+            $fileSize = $_FILES['multimedia']['size']["$key"];
+            $fileError = $_FILES['multimedia']['error']["$key"];
 
             $fileExt = explode(".", $fileName);
             $fileActualExt = strtolower(end($fileExt));

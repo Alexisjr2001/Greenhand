@@ -32,23 +32,23 @@ include_once '../includes/Header.inc.php';
             <h1>Our Activities</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sed ipsum et praesentium autem repellat.</p>
             <div id="activity-card-container">
-                <a class="activity-card" href="../Activity/activity_view.php">
+                <a class="activity-card" href="../Activity/ActivityView.php">
                     <h1>Example Activity</h1>
                     <img src="../Assets/placeholder-image.png" alt="">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, assumenda.</p>
                 </a>
-                <a class="activity-card" href="../Activity/activity_view.php">
+                <a class="activity-card" href="../Activity/ActivityView.php">
                     <h1>Activity 2</h1>
                     <img src="../Assets/placeholder-image.png" alt="">
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, illum!</p>
                 </a>
-                <a class="activity-card" href="../Activity/activity_view.php">
+                <a class="activity-card" href="../Activity/ActivityView.php">
                     <h1>Activity 3</h1>
                     <img src="../Assets/placeholder-image.png" alt="">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, nihil.</p>
                 </a>
             </div>
-            <a href="../Activity/publish_activity.php" class="publish-something">Publish an activity!</a>
+            <a href="../Activity/PublishActivity.php" class="publish-something">Publish an activity!</a>
         </section>
         <section class="section-card" id="our-activities-detailed">
             <div id="detailed-activities-title-container">

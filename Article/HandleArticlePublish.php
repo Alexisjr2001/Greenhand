@@ -1,7 +1,9 @@
 <?php
+session_start();
+
 function exitPHP($GETParams){
     $urlQuery=http_build_query($GETParams);
-    header("Location: ..\Article\publish_article.php?$urlQuery");
+    header("Location: ..\Article\PublishArticle.php?$urlQuery");
     exit();
 }
 if(isset($_POST['submit'])){
@@ -45,15 +47,9 @@ if(isset($_POST['submit'])){
 
     $stmt=mysqli_stmt_init($conn);
 
-    $insertJSON='INSERT INTO articles (articlesJSON) values(?)';
-    if(!mysqli_stmt_prepare($stmt,$insertJSON)){
-        $urlQuery['server']="prepare-error";
-        exitPHP($urlQuery);
-    }
-    mysqli_stmt_bind_param($stmt,"s",$jsonFileName);
-    if(!mysqli_stmt_execute($stmt)){
-        $urlQuery['server']="insert-error";
-        exitPHP($urlQuery);
-    }
+    $insertJSON='INSERT INTO articles (articlesJSON,articlesUserID) values(?,?)';
+    include_once "../includes/SaveJSON.php";
+    statement_handler($stmt,$insertJSON,$jsonFileName,$urlQuery);
+
     header("Location: PublishArticle.php?creation=success");
 }

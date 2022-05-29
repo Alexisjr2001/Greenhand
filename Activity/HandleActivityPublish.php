@@ -1,7 +1,9 @@
 <?php
+session_start();
+
 function exitPHP($GETParams){
     $urlQuery=http_build_query($GETParams);
-    header("Location: ..\Activity\publish_activity.php?$urlQuery");
+    header("Location: ..\Activity\PublishActivity.php?$urlQuery");
     exit();
 }
 if(isset($_POST['submit'])){
@@ -108,15 +110,8 @@ if(isset($_POST['submit'])){
 
     $stmt=mysqli_stmt_init($conn);
 
-    $insertJSON='INSERT INTO activities (activitiesJSON) values(?)';
-    if(!mysqli_stmt_prepare($stmt,$insertJSON)){
-        $urlQuery['server']="prepare-error";
-        exitPHP($urlQuery);
-    }
-    mysqli_stmt_bind_param($stmt,"s",$jsonFileName);
-    if(!mysqli_stmt_execute($stmt)){
-        $urlQuery['server']="insert-error";
-        exitPHP($urlQuery);
-    }
-    header("Location: publish_activity.php?creation=success");
+    $insertJSON='INSERT INTO activities (activitiesJSON,activitiesUserID) values(?,?)';
+    include_once "../includes/SaveJSON.php";
+    statement_handler($stmt,$insertJSON,$jsonFileName,$urlQuery);
+    header("Location: PublishActivity.php?creation=success");
 }

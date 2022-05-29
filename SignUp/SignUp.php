@@ -82,7 +82,7 @@ if (isset($_POST["submit"])){
         $urlQuery["phone"]="NaN";
     }
 
-    if ((isset($_FILES["photo"]) and empty($_FILES['photo']['name'])) or !(isset($_FILES["photo"]))){
+    if ($_FILES['photo']['error']==UPLOAD_ERR_NO_FILE){
         $fileDestination="../Assets/empty-user.png";
     }
     else{

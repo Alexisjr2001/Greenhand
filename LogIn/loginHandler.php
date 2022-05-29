@@ -43,6 +43,7 @@ if(isset($_POST['submit'])){
     foreach($results as $row){
         if (password_verify($pwd,$row['usersPwd'])){
             session_start();
+            session_unset();
             $_SESSION['id']=$row['usersID'];
             header("Location: ../Index/index.php?login=success");
             exit();

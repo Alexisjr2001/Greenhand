@@ -18,12 +18,26 @@
         </div>
     </div>
     <div id="header-sign-up">
-        <a href="../SignUp/SignUp.html">Sign Up</a>
         <?php
-        if(isset($_SESSION['id'])){
-            echo '<a href="../LogIn/logout.php">Log Out</a>';
+        if (isset($_SESSION['id'])) {
+            echo '<div class="dropdown">
+                      <button class="dropbtn">Profile</button>
+                      <div class="dropdown-content">
+                        <img src="/Assets/empty-user.png" alt="user image" id="prof-image">
+                        <a href="/Article/PublishArticle.php">Publish Article</a>
+                        <a href="/Activity/PublishActivity.php">Publish Activity</a>
+                        <a href="">Edit Profile</a>
+                      </div>
+                    </div>';
+        } else {
+            echo '<a href="../SignUp/SignUp.html">Sign Up</a>';
         }
-        else{
+
+        ?>
+        <?php
+        if (isset($_SESSION['id'])) {
+            echo '<a href="../LogIn/logout.php">Log Out</a>';
+        } else {
             echo '<a href="../LogIn/login.php">Log In</a>';
         }
         ?>

@@ -421,3 +421,10 @@ input[type="file"] {
         width: 75%;
     }
 }
+input[type="date"]::before {
+    content: attr(placeholder);
+}
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+    content: "";
+}

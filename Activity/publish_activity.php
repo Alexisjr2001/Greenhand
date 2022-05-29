@@ -17,7 +17,7 @@ include_once '../includes/Header.php';
 <main>
   <h1>Publish a Volunteering Activity</h1>
   <section class="container">
-    <form action="/" class="form">
+    <form action="HandleActivityPublish.php" class="form" method="post" enctype="multipart/form-data">
       <section id="title_container">
         <label for="title" class="label" id="title_label">Title:</label>
         <input type="text" name="title" id="title" required>
@@ -26,23 +26,28 @@ include_once '../includes/Header.php';
         <p class="label">Activity's category/ies:</p>
         <div id="category_checkbox">
           <div>
-            <input type="checkbox" id="Sustainable_agriculture" name="Sustainable_agriculture">
+            <input type="checkbox" id="Sustainable_agriculture" value="Sustainable_agriculture" name="categories[]">
+              <input type="hidden" name="allCategories[]" value="Sustainable_agriculture">
             <label for="Sustainable_agriculture" class="check_box_label">Sustainable agriculture</label>
           </div>
           <div>
-            <input type="checkbox" id="Marine_conservation" name="Marine_conservation">
+            <input type="checkbox" id="Marine_conservation" name="categories[]" value="Marine_conservation">
+              <input type="hidden" name="allCategories[]" value="Marine_conservation">
             <label for="Marine_conservation" class="check_box_label">Marine conservation</label>
           </div>
           <div>
-            <input type="checkbox" id="Nature_conservation" name="Nature_conservation">
+            <input type="checkbox" id="Nature_conservation" name="categories[]" value="Nature_conservation">
+              <input type="hidden" name="allCategories[]" value="Nature_conservation">
             <label for="Nature_conservation" class="check_box_label">Nature conservation</label>
           </div>
           <div>
-            <input type="checkbox" id="Renewable_energy" name="Renewable_energy">
+            <input type="checkbox" id="Renewable_energy" name="categories[]" value="Renewable_energy">
+              <input type="hidden" name="allCategories[]" value="Renewable_energy">
             <label for="Renewable_energy" class="check_box_label">Renewable energy</label>
           </div>
           <div>
-            <input type="checkbox" id="Reforestation" name="Reforestation">
+            <input type="checkbox" id="Reforestation" name="categories[]" value="Reforestation">
+              <input type="hidden" name="allCategories[]" value="Reforestation">
             <label for="Reforestation" class="check_box_label">Reforestation</label>
           </div>
         </div>
@@ -91,12 +96,12 @@ include_once '../includes/Header.php';
         <div id="multimedia_container">
           <div class="label">Multimedia:</div>
           <label for="multimedia" id="multimedia_button">Choose Files</label>
-          <input type="file" id="multimedia" name="multimedia" accept="image/png, image/jpeg, video/mp4">
+          <input type="file" id="multimedia" name="multimedia[]" multiple accept="image/png, image/jpeg, image/jpg, video/mp4">
         </div>
       </section>
       <section id="button_container">
         <a href="../index.php" id="cancel">Cancel</a>
-        <button type="submit" id="submit">Publish</button>
+        <button type="submit" name="submit" id="submit">Publish</button>
       </section>
     </form>
   </section>

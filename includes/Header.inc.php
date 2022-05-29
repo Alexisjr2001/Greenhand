@@ -1,5 +1,5 @@
 <header>
-    <div><a href=""><img src="../Assets/logo-placeholder.png" alt="" class="GH_logo"></a></div>
+    <div><a href="../Index/index.php"><img src="../Assets/logo-placeholder.png" alt="" class="GH_logo"></a></div>
     <nav id="header-links">
         <a href="../Index/index.php#our-activities">Our Activities</a>
         <a href="../Index/index.php#our-articles">Our Articles</a>
@@ -23,9 +23,9 @@
             echo '<div class="dropdown">
                       <button class="dropbtn">Profile</button>
                       <div class="dropdown-content">
-                        <img src="/Assets/empty-user.png" alt="user image" id="prof-image">
-                        <a href="/Article/PublishArticle.php">Publish Article</a>
-                        <a href="/Activity/PublishActivity.php">Publish Activity</a>
+                        <img src="../Assets/empty-user.png" alt="user image" id="prof-image">
+                        <a href="../Article/PublishArticle.php">Publish Article</a>
+                        <a href="../Activity/PublishActivity.php">Publish Activity</a>
                         <a href="">Edit Profile</a>
                       </div>
                     </div>';

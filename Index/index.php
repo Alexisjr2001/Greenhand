@@ -1,4 +1,5 @@
 <?php
+include_once "../includes/CreateDatabase.php";
     session_start();
 ?>
 <!DOCTYPE html>

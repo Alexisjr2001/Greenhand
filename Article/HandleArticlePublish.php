@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
         $urlQuery["detailed"]="empty";
     }
 
-    include_once "../includes/HandleFiles.php";
+    include_once "../includes/FileHandler.inc.php";
     $uploadedFiles=array();
     $folder="ArticleMultimedia/";
     Handle($folder,$uploadedFiles,$urlQuery);

@@ -13,7 +13,7 @@
 </head>
 <body>
 <?php
-include_once '../includes/Header.php';
+include_once '../includes/Header.inc.php';
 ?>
 <main>
     <h1>About Us</h1>

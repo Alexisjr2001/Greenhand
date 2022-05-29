@@ -89,7 +89,7 @@ if(isset($_POST['submit'])){
         $urlQuery["recommendedFor"]="empty";
     }
 
-    include_once "../includes/HandleFiles.php";
+    include_once "../includes/FileHandler.inc.php";
     $uploadedFiles=array();
     $folder="ActivityMultimedia/";
     Handle($folder,$uploadedFiles,$urlQuery);

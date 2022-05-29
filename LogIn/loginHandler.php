@@ -44,7 +44,7 @@ if(isset($_POST['submit'])){
         if (password_verify($pwd,$row['usersPwd'])){
             session_start();
             $_SESSION['id']=$row['usersID'];
-            header("Location: ../index.php?login=success");
+            header("Location: ../Index/index.php?login=success");
             exit();
         }
     }

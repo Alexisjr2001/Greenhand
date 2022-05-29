@@ -1,1 +1,1 @@
-Repository for the front-end of the Greenhand (trademark pending) project.
+Repository for the front and back end of the Greenhand (trademark pending) project.

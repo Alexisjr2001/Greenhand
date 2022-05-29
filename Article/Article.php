@@ -6,9 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Article</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Article.css">
     <link rel="stylesheet" href="../miscellaneous.css">
-    <script src="../index.js"></script>
+    <script src="../Index/index.js"></script>
 </head>
 <body>
 <?php
@@ -33,11 +33,11 @@ include_once '../includes/Header.inc.php';
 <body>
 
     <div class="main-carousel">
-        <div class="ell"><img src="img/port01.jpg"></div>
-        <div class="ell"><img src="img/port02.jpg"></div>
-        <div class="ell"><img src="img/port03.jpg"></div>
-        <div class="ell"><img src="img/port04.jpg"></div>
-        <div class="ell"><img src="img/port05.jpg"></div>
+        <div class="ell"><img src="../Assets/light_blue.jpg"></div>
+        <div class="ell"><img src="../Assets/meta.jpg"></div>
+        <div class="ell"><img src="../Assets/dark_blue.jpg"></div>
+        <div class="ell"><img src="../Assets/black.jpg"></div>
+        <div class="ell"><img src="../Assets/pinterest.jpg"></div>
     </div>
 
 
@@ -58,7 +58,7 @@ include_once '../includes/Header.inc.php';
                 <div id="contact-info">
                     <p>Telephone: +30 123123123</p>
                     <p>Email: contact-us@greenhand.com</p>
-                    <p>Street Adress: Fictinal Street 15</p>
+                    <p>Street Address: Fictional Street 15</p>
                 </div>
                 <div id="follow-us">
                     <div id="follow-us-title"><b>Follow Us!</b></div>

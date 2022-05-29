@@ -6,10 +6,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>About Us</title>
-    <link rel="stylesheet" href="about_us.css">
+    <link rel="stylesheet" href="AboutUs.css">
     <link rel="stylesheet" href="../miscellaneous.css">
     <title>Greenhand</title>
-    <script src="../index.js"></script>
+    <script src="../Index/index.js"></script>
 </head>
 <body>
 <?php
@@ -50,7 +50,7 @@ include_once '../includes/Header.inc.php';
             <div id="img_button_container"><img id="volunteer-img"
                     src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dm9sdW50ZWVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
                     alt="image of a volunteer">
-                <a href="../index.php">
+                <a href="../Index/index.php">
                     <button>Join Us!</button>
                 </a>
             </div>

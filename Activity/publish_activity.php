@@ -8,7 +8,7 @@
   <title>Publish Activity</title>
   <link rel="stylesheet" href="publish_activity.css">
   <link rel="stylesheet" href="../miscellaneous.css">
-  <script src="../index.js"></script>
+  <script src="../Index/index.js"></script>
 </head>
 <body>
 <?php
@@ -100,7 +100,7 @@ include_once '../includes/Header.inc.php';
         </div>
       </section>
       <section id="button_container">
-        <a href="../index.php" id="cancel">Cancel</a>
+        <a href="../Index/index.php" id="cancel">Cancel</a>
         <button type="submit" name="submit" id="submit">Publish</button>
       </section>
     </form>

@@ -55,5 +55,5 @@ if(isset($_POST['submit'])){
         $urlQuery['server']="insert-error";
         exitPHP($urlQuery);
     }
-    header("Location: publish_article.php?creation=success");
+    header("Location: PublishArticle.php?creation=success");
 }

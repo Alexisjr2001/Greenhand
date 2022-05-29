@@ -6,9 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Publish Article</title>
-    <link rel="stylesheet" href="publish_article.css">
+    <link rel="stylesheet" href="PublishArticle.css">
     <link rel="stylesheet" href="../miscellaneous.css">
-    <script src="../index.js"></script>
+    <script src="../Index/index.js"></script>
 </head>
 <body>
 <?php
@@ -69,7 +69,7 @@ include_once '../includes/Header.inc.php';
                     </div>
                 </div>
                 <section id="button_container">
-                    <a href="../index.php" id="cancel">Cancel</a>
+                    <a href="../Index/index.php" id="cancel">Cancel</a>
                     <button type="submit" name="submit" id="submit">Publish</button>
                 </section>
             </form>

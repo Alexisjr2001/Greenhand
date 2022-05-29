@@ -8,7 +8,7 @@
     <title>Activity Page</title>
     <link rel="stylesheet" href="activity_view.css">
     <link rel="stylesheet" href="../miscellaneous.css">
-    <script src="../index.js"></script>
+    <script src="../Index/index.js"></script>
 </head>
 <body>
 <?php
@@ -16,7 +16,7 @@ include_once '../includes/Header.inc.php';
 ?>
 <main>
     <h1>Activity Name</h1>
-    <h2>By <a href="../index.php">Organization Page</a></h2>
+    <h2>By <a href="../Index/index.php">Organization Page</a></h2>
     <section id="container">
         <div id="content_container">
             <section id="text_container">

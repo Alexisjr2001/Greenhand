@@ -1,4 +1,19 @@
 <?php
+if(!is_dir("../Activity/ActivityJSON")){
+    mkdir("../Activity/ActivityJSON");
+}
+if(!is_dir("../Activity/ActivityMultimedia")){
+    mkdir("../Activity/ActivityMultimedia");
+}
+if(!is_dir("../Article/ArticleJSON")){
+    mkdir("../Article/ArticleJSON");
+}
+if(!is_dir("../Article/ArticleMultimedia")){
+    mkdir("../Article/ArticleMultimedia");
+}
+if(!is_dir("../ProfilePictures")){
+    mkdir("../ProfilePictures");
+}
 try{
     $conn = mysqli_connect("localhost","root","");
 }

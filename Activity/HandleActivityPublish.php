@@ -9,6 +9,13 @@ function exitPHP($GETParams){
 if(isset($_POST['submit'])){
     $urlQuery=array();
     $title=$_POST['title'];
+    if(isset($_SESSION['id'])){
+        $orgID=$_SESSION['id'];
+    }
+    else{
+        $urlQuery['orgID']='not-found';
+    }
+
     $allCategories=$_POST['allCategories'];
     $categories=array();
     if(isset($_POST['categories'])){
@@ -96,7 +103,7 @@ if(isset($_POST['submit'])){
     $folder="ActivityMultimedia/";
     Handle($folder,$uploadedFiles,$urlQuery);
 
-    $json=json_encode(array('title'=>$title,'categories'=>$categories,'description'=>$description,'highlights'=>$highlights,'typicalDay'=>$typicalDay,'freeDay'=>$freeDay,'volunteers'=>$volunteers,'beginDate'=>$beginDate,'endDate'=>$endDate,'minDays'=>$minDays,'requirements'=>$requirements,'recommendedFor'=>$recommendedFor,'uploadedFiles'=>$uploadedFiles));
+    $json=json_encode(array('title'=>$title,'creatorID'=>$orgID,'categories'=>$categories,'description'=>$description,'highlights'=>$highlights,'typicalDay'=>$typicalDay,'freeDay'=>$freeDay,'volunteers'=>$volunteers,'beginDate'=>$beginDate,'endDate'=>$endDate,'minDays'=>$minDays,'requirements'=>$requirements,'recommendedFor'=>$recommendedFor,'uploadedFiles'=>$uploadedFiles));
     $jsonFileName=uniqid('',true).".json";
     if(!file_put_contents("ActivityJSON/$jsonFileName",$json)){
         $urlQuery["json"]="err";

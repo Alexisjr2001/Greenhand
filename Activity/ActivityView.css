@@ -8,32 +8,6 @@ body {
 }
 
 /*--------------------------------------------MAIN PAGE CSS----------------------------------------------*/
-
-#container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
-    margin-bottom: 4em;
-}
-
-#content_container {
-    border: .1em solid #4ab56f;
-    border-radius: 1.5em;
-    padding: 1.5em;
-    background-color: #fafcfa;
-    box-shadow: 0 5px 10px 5px rgba(78, 78, 78, 0.479);
-
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    height: 100%;
-}
-
 h1 {
     text-align: center;
     width: 100%;
@@ -64,15 +38,35 @@ h3 {
     font-weight: 300;
 }
 
-#min_days_header {
-    margin-top: 3em;
-    margin-bottom: 3em;
+#container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 4em;
+}
+
+#content_container {
+    border: .1em solid #4ab56f;
+    border-radius: 1.5em;
+    padding: 1.5em;
+    background-color: #fafcfa;
+    box-shadow: 0 5px 10px 5px rgba(78, 78, 78, 0.479);
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 90%;
+    height: 100%;
 }
 
 #text_container {
     border: 3px solid #2e95d2;
     background-color: #e2e3e2;
-    width: 50%;
+    width: 100%;
     height: 25em;
     display: flex;
     flex-direction: row;
@@ -81,45 +75,57 @@ h3 {
 
 #brief_desc {
     text-align: center;
-    border: 1px solid black;
-    background-color: #cccccc;
-    width: 30%;
-    height: 2em;
-    padding-top: 15px;
-    font-size: 1em;
+    font-size: 1.2em;
+    padding: 0.6em;
 }
 
-#highlight_list {
+.section-container {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: flex-start;
+    align-items: start;
+    align-content: center;
+    width: 100%;
+    margin-bottom: 1em;
 }
 
+.paragraph {
+    text-align: justify;
+    font-size: 1em;
+    padding: 3px;
+}
 
 .sample_text_container {
     background-color: #e2e3e2;
     border: 1px solid rgba(77, 136, 4, 0.84);
     border-radius: 1em;
-    width: 35em;
-    height: 20em;
+    width: 100%;
 }
 
-#multimedia_container, #similar_activity_container {
-    margin: 4em 2em 0 2em;
+#activity-date {
+    border-top: 1px dashed rgba(77, 136, 4, 0.84);
+    border-bottom: 1px dashed rgba(77, 136, 4, 0.84);
+    margin-top: 0.7em;
+}
+
+#min_days_header {
+    margin-top: 1em;
+    margin-bottom: 1.4em;
+}
+
+#multimedia_container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin: 1em 1em 1em 1em;
 }
 
-#multimedia, #similar_activity {
-    width: 35em;
-}
-
-#multimedia_container a, #similar_activity_container a {
-    font-size: 5em;
-    text-decoration: none;
-    margin: 2em 1em 1em 1em;
+#multimedia_container img {
+    width: 20em;
+    height: 20em;
 }
 
 #participate {
@@ -135,6 +141,16 @@ h3 {
     color: white;
     transition: color 0.27s, border-color 0.27s, box-shadow 0.27s, transform 0.27s;
 }
+
+.participate-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 
 #participate:hover, #participate:active, #participate:focus {
     color: #ffa260;
@@ -156,6 +172,8 @@ h3 {
     h3 {
         font-size: 1.4em;
     }
+
+
 }
 
 @media (max-width: 992px) {
@@ -184,24 +202,28 @@ h3 {
         width: 90%;
     }
 
-    #highlight_list {
-        width: 90%;
-        flex-direction: row;
-        justify-content: flex-start;
-    }
-
     #multimedia_container {
         margin: 1em 0 0 0;
     }
 
-    #multimedia_container a, #similar_activity_container a {
+    #multimedia_container a {
         font-size: 3em;
         text-decoration: none;
         margin: 2em 0.5em 0.5em 0.5em;
     }
 
-    #multimedia, #similar_activity {
+    #multimedia {
         width: 30em;
+    }
+
+    .paragraph {
+        font-size: 0.6em;
+        padding: 1px;
+    }
+
+    #multimedia_container img {
+        width: 10em;
+        height: 10em;
     }
 
 }
@@ -228,7 +250,7 @@ h3 {
         height: 15em;
     }
 
-    #multimedia_container a, #similar_activity_container a {
+    #multimedia_container a {
         font-size: 2em;
         margin: 3em 0 0 0;
     }
@@ -238,16 +260,22 @@ h3 {
         height: 3em;
     }
 
-    #multimedia, #similar_activity {
+    #multimedia {
         width: 20em;
-    }
-
-    #maximize_exp {
-        margin-bottom: 35px;
     }
 
     #requirements, #participate {
         margin-bottom: 30px;
+    }
+
+    #multimedia_container {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #multimedia_container img {
+        width: 7em;
+        height: 7em;
     }
 }
 

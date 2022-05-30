@@ -19,134 +19,131 @@ include_once '../includes/Header.inc.php';
 ?>
 <main>
     <?php
-        if(isset($_GET['activityID'])){
-            include_once "../includes/DBConn.inc.php";
+    if (isset($_GET['activityID'])) {
+        include_once "../includes/DBConn.inc.php";
 
-            $stmt=mysqli_stmt_init($conn);
-            $sql="SELECT * FROM activities WHERE activitiesID=?";
-            if(!mysqli_stmt_prepare($stmt,$sql)){
-                header("Location: ../Index/index.php?activityID=error");
-                exit();
-            }
-            $id=$_GET['activityID']+0;
-            mysqli_stmt_bind_param($stmt,"i",$id);
-            mysqli_stmt_execute($stmt);
-            $results=mysqli_stmt_get_result($stmt);
-            if(mysqli_num_rows($results)==0){
-                header("Location: ../Index/index.php?activityID=not-found");
-                exit();
-            }
-            else{
-                $path=mysqli_fetch_assoc($results)['activitiesJSON'];
-            }
-        }
-        else{
-            header("Location: ../Index/index.php?activityID=not-found");
+        $stmt = mysqli_stmt_init($conn);
+        $sql = "SELECT * FROM activities WHERE activitiesID=?";
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            header("Location: ../Index/index.php?activityID=error");
             exit();
         }
-        $json=file_get_contents('ActivityJSON/'.$path);
-        $array=json_decode($json,true);
+        $id = $_GET['activityID'] + 0;
+        mysqli_stmt_bind_param($stmt, "i", $id);
+        mysqli_stmt_execute($stmt);
+        $results = mysqli_stmt_get_result($stmt);
+        if (mysqli_num_rows($results) == 0) {
+            header("Location: ../Index/index.php?activityID=not-found");
+            exit();
+        } else {
+            $path = mysqli_fetch_assoc($results)['activitiesJSON'];
+        }
+    } else {
+        header("Location: ../Index/index.php?activityID=not-found");
+        exit();
+    }
+    $json = file_get_contents('ActivityJSON/' . $path);
+    $array = json_decode($json, true);
     ?>
     <?php
-        echo '<h1>'.$array['title'].'</h1>';
+    echo '<h1>' . $array['title'] . '</h1>';
     ?>
     <?php
     include_once "../includes/DBConn.inc.php";
 
-    $stmt=mysqli_stmt_init($conn);
-    $sql="SELECT usersName FROM users WHERE usersID=?";
-    if(!mysqli_stmt_prepare($stmt,$sql)){
+    $stmt = mysqli_stmt_init($conn);
+    $sql = "SELECT usersName FROM users WHERE usersID=?";
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("Location: ../Index/index.php?orgName=error");
         exit();
     }
-    $id=$array['creatorID']+0;
-    mysqli_stmt_bind_param($stmt,"i",$id);
+    $id = $array['creatorID'] + 0;
+    mysqli_stmt_bind_param($stmt, "i", $id);
     mysqli_stmt_execute($stmt);
-    $results=mysqli_stmt_get_result($stmt);
-    if(mysqli_num_rows($results)==0){
+    $results = mysqli_stmt_get_result($stmt);
+    if (mysqli_num_rows($results) == 0) {
         header("Location: ../Index/index.php?creator=not-found");
         exit();
-    }
-    else{
+    } else {
         $name = mysqli_fetch_assoc($results)['usersName'];
     }
-    echo '<h2>By <a href="">'.$name.'</a></h2>';
+    echo '<h2>By <a href="">' . $name . '</a></h2>';
     ?>
     <section id="container">
         <div id="content_container">
             <section id="text_container">
                 <?php
-                echo '<p id="brief_desc">'.$array['description'].'</p>';
+                echo '<p id="brief_desc">' . $array['description'] . '</p>';
                 ?>
             </section>
-            <section id="highlight_list">
+            <section class="section-container">
                 <h3>Activity's Highlights:</h3>
                 <?php
-                echo '<p>'.$array['highlights'].'</p>';
+                echo '<p class="paragraph">' . $array['highlights'] . '</p>';
                 ?>
             </section>
-            <section>
+            <section class="section-container">
                 <h3>Have a look at your typical day there:</h3>
                 <div class="sample_text_container">
                     <?php
-                    echo '<p>'.$array['typicalDay'].'</p>';
+                    echo '<p class="paragraph">' . $array['typicalDay'] . '</p>';
                     ?>
                 </div>
             </section>
-            <section>
+            <section class="section-container">
                 <h3>There are some suggestions to enjoy your free time:</h3>
                 <div class="sample_text_container">
                     <?php
-                    echo '<p>'.$array['freeDay'].'</p>';
+                    echo '<p class="paragraph">' . $array['freeDay'] . '</p>';
                     ?>
                 </div>
             </section>
-            <section>
+            <section class="section-container" id="activity-date">
                 <h3>This activity will take place between
                     <?php
-                    echo '<time datetime="dd-mm-yyyy">'.$array['beginDate'].'</time>';
+                    echo '<time datetime="dd-mm-yyyy">' . $array['beginDate'] . '</time>';
                     ?>
 
                     and
                     <?php
-                    echo '<time datetime="dd-mm-yyyy">'.$array['endDate'].'</time>';
+                    echo '<time datetime="dd-mm-yyyy">' . $array['endDate'] . '</time>';
                     ?>
                     .
                 </h3>
                 <?php
-                echo '<h3 id="min_days_header">You have to be there at least <b>'.$array['minDays'].'</b> days.</h3>';
+                echo '<h3 id="min_days_header">You have to be there at least <b>' . $array['minDays'] . '</b> days.</h3>';
                 ?>
             </section>
-            <section>
+            <section class="section-container">
                 <h3 id="requirements">In order to join, you have to meet the following requirements:</h3>
                 <div class="sample_text_container">
                     <?php
-                    echo '<p>'.$array['requirements'].'</p>';
+                    echo '<p class="paragraph">' . $array['requirements'] . '</p>';
                     ?>
                 </div>
             </section>
-            <section>
+            <section class="section-container">
                 <h3 id="maximize_exp">You could maximize your experience following some of the following:</h3>
                 <div class="sample_text_container">
                     <?php
-                    echo '<p>'.$array['recommendedFor'].'</p>';
+                    echo '<p class="paragraph">' . $array['recommendedFor'] . '</p>';
                     ?>
                 </div>
             </section>
             <section id="multimedia_container">
-                <a href="">&lsaquo;</a>
                 <?php
-                    if(count($array['uploadedFiles'])>0){
-                        foreach($array['uploadedFiles'] as $key=>$value){
-                            echo '<img src="'.$value.'" alt="multimedia content" id="multimedia">';
-                        }
+                if (count($array['uploadedFiles']) > 0) {
+                    foreach ($array['uploadedFiles'] as $key => $value) {
+                        echo '<img src="' . $value . '" alt="multimedia content" id="multimedia">';
                     }
+                }
                 ?>
-                <a href="">&rsaquo;</a>
             </section>
-            <a href="">
-                <button id="participate">Participate!</button>
-            </a>
+            <section class="participate-container">
+                <a href="../Organization/OrganizationPage.php">
+                    <button id="participate">Participate!</button>
+                </a>
+            </section>
         </div>
     </section>
 </main>

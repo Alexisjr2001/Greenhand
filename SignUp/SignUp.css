@@ -170,3 +170,20 @@ form h3{
     background: #5ab95a;
     cursor: pointer;
 }
+
+#gender {
+    background-color: #5ab95a;
+    color: #fff;
+
+    border-radius: 6px;
+}
+
+#title-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+#home-button {
+    margin-left: auto;
+    text-decoration: none;
+}

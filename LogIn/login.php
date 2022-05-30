@@ -8,7 +8,12 @@
 </head>
 <body>
 <div class="wrapper">
-    <h2>Log In</h2>
+    <div id="title-wrapper">
+        <h2>Log In</h2>
+        <a href='../Index/index.php' id="home-button">
+            <h2>Home</h2>
+        </a>
+    </div>
     <form action="loginHandler.php" method="post" enctype="multipart/form-data">
         <div class="input-box">
             <input type="text" name="username" placeholder="Enter your Email" required>

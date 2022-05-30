@@ -107,12 +107,24 @@ form .input-box input{
 input[type="file"]{
     display: none;
 }
+
+#title-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
 h3{
     color: #707070;
     font-size: 14px;
     font-weight: 500;
     margin-left: 10px;
 }
+
+#home-button {
+    margin-left: auto;
+    text-decoration: none;
+}
+
 .input-box.button input{
     color: #fff;
     letter-spacing: 1px;

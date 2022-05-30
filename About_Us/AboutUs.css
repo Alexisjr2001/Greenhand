@@ -6,6 +6,7 @@ html {
 body {
     margin: 0;
 }
+
 /*--------------------------------------------MAIN PAGE CSS----------------------------------------------*/
 
 h1 {
@@ -24,6 +25,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
+    margin-bottom: 4em;
 }
 
 .content_container {
@@ -42,7 +44,7 @@ h1 {
     height: 100%;
 }
 
-p {
+.content_container p {
     text-align: justify;
     font-size: 1.5em;
     font-weight: 400;
@@ -64,7 +66,7 @@ p {
     width: 100%;
 }
 
-button {
+#join-us {
     margin-top: 3em;
     width: 15em;
     height: 4em;
@@ -78,7 +80,7 @@ button {
     transition: color 0.27s, border-color 0.27s, box-shadow 0.27s, transform 0.27s;
 }
 
-button:hover, button:active, button:focus {
+#join-us:hover, #join-us:active, #join-us:focus {
     color: #ffa260;
     border-color: #428f5d;
     box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c;
@@ -108,14 +110,14 @@ button:hover, button:active, button:focus {
         /* height: 15em; */
     }
 
-    button {
+    #join-us {
         margin-top: 0;
         /* margin-left: 1em; */
         width: 13em;
         height: 3.5em;
     }
 
-    p {
+    .content_container p {
         font-size: 1.4em;
     }
 }
@@ -134,8 +136,7 @@ button:hover, button:active, button:focus {
         /* height: 10em; */
     }
 
-    p {
+    .content_container p {
         font-size: 1.2em;
     }
-
 }

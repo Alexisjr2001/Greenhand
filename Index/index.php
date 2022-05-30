@@ -1,5 +1,6 @@
 <?php
 include_once "../includes/CreateDatabase.php";
+include_once "../includes/PopulateDatabase.inc.php";
 session_start();
 ?>
 <!DOCTYPE html>

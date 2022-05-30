@@ -157,27 +157,9 @@ include_once '../includes/Header.inc.php';
             </section>
         </div>
     </section>
-    <footer id="contact-us">
-        <div id="footer-title-container">
-            <h1><b>Contact Us!</b></h1>
-        </div>
-        <div id="footer-details-container">
-            <div id="contact-info">
-                <p>Telephone: +30 123123123</p>
-                <p>Email: contact-us@greenhand.com</p>
-                <p>Street Address: Fictional Street 15</p>
-            </div>
-            <div id="follow-us">
-                <div id="follow-us-title"><b>Follow Us!</b></div>
-                <div id="follow-us-links">
-                    <a href=""><img src="../Assets/facebook-logo.png" alt=""></a>
-                    <a href=""><img src="../Assets/twitter-logo.png" alt=""></a>
-                    <a href=""><img src="../Assets/youtube-logo.png" alt=""></a>
-                </div>
-            </div>
-        </div>
-    </footer>
 </main>
-
+<?php
+include_once '../includes/Footer.inc.php';
+?>
 </body>
 </html>

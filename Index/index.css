@@ -115,7 +115,7 @@ body {
 
 .section-card {
     display: flex;
-    
+
     margin-top: 3em;
     margin-bottom: 3em;
     padding: 1em;
@@ -185,7 +185,7 @@ body {
     display: flex;
     justify-content: center;
     flex: 1;
-    
+
     align-items: center;
 }
 

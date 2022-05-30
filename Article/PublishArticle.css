@@ -7,74 +7,6 @@ body {
     margin: 0;
 }
 
-/*--------------------------------------------HEADER CSS----------------------------------------------*/
-header {
-    background-color: #4AB56F;
-    display: flex;
-    padding-left: 15em;
-    padding-right: 15em;
-    box-shadow: 0 5px 10px rgba(84, 132, 73, 0.475);
-
-    justify-content: center;
-
-    /* position: fixed; */
-    top: 0;
-    left: 0;
-    right: 0;
-    position:sticky;
-}
-header>* { /* Children of header*/
-    display:flex;
-    flex:1;
-    align-items: center;
-
-    min-height: 2em;
-    max-height: 3em;
-}
-
-.GH_logo {
-    max-height: 3em;
-}
-
-#header-links>a, #header-sign-up>a{
-    text-decoration: none;
-    color: black;
-    padding: .7em;
-    border-radius: 1em;
-
-    transition: all .5s;
-}
-
-#header-links>a:hover, #header-sign-up>a:hover{
-    text-decoration: none;
-    color: black;
-    background-color: #2e9352;
-}
-
-#header-links>a{
-    padding-right: 1em;
-    padding-left: 1em;
-    margin-left: 1em;
-    margin-right: 1em;
-    /* min-width: 2em; */
-    text-align: center;
-}
-#header-sign-up>a {
-    padding-right: .3em;
-    padding-left:.3em;
-    margin-left: .3em;
-    margin-right: .3em;
-}
-#header-links {
-    justify-content: center;
-    flex: 3;
-}
-
-#header-sign-up {
-    justify-content:right;
-}
-
-
 /*--------------------------------------------MAIN PAGE CSS----------------------------------------------*/
 
 h1 {
@@ -92,6 +24,7 @@ h1 {
 .container {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 2em;
 }
 
 .form {
@@ -136,7 +69,7 @@ h1 {
     border: 2px solid #2e9352;
 }
 
-#category_container, #description_container, #detailed_container{
+#category_container, #description_container, #detailed_container {
     display: flex;
     width: 100%;
     padding: 15px;
@@ -153,7 +86,7 @@ h1 {
     padding-left: 1.5rem;
 }
 
-#category_checkbox div{
+#category_checkbox div {
     display: flex;
     font-size: 1.5em;
 }
@@ -195,7 +128,7 @@ h1 {
     margin-right: 15px;
 }
 
-#multimedia_container{
+#multimedia_container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -207,6 +140,7 @@ h1 {
 input[type="file"] {
     display: none;
 }
+
 #multimedia_button {
     border: 2px solid #2e9352;
     border-radius: 1em;
@@ -304,17 +238,18 @@ input[type="file"] {
         border: 1px solid #ccc;
     }
 
-    #category_checkbox div{
+    #category_checkbox div {
         font-size: medium;
     }
 
-    .label{
+    .label {
         font-size: 2em;
     }
 
     #description_container textarea {
         margin-right: 10px;
     }
+
     #detailed_container textarea {
         margin-right: 10px;
     }
@@ -334,25 +269,29 @@ input[type="file"] {
     h1 {
         font-size: 1em;
     }
+
     #title {
         font-size: 0.85em;
         margin-left: 5px;
         border: 1px solid #ccc;
     }
 
-    #category_checkbox div{
+    #category_checkbox div {
         font-size: small;
     }
-    .label{
+
+    .label {
         font-size: 1em;
     }
 
     #description_container textarea {
         margin-right: 5px;
     }
+
     #detailed_container textarea {
         margin-right: 5px;
     }
+
     #category_checkbox {
         flex-direction: row;
     }

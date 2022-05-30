@@ -147,14 +147,6 @@ include_once '../includes/Header.inc.php';
             <a href="">
                 <button id="participate">Participate!</button>
             </a>
-            <section>
-                <h3>You might also like these:</h3>
-                <section id="similar_activity_container">
-                    <a href="">&lsaquo;</a>
-                    <img src="../Assets/placeholder-image.png" alt="multimedia content" id="similar_activity">
-                    <a href="">&rsaquo;</a>
-                </section>
-            </section>
         </div>
     </section>
 </main>

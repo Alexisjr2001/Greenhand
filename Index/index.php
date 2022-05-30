@@ -112,7 +112,7 @@ include_once '../includes/Header.inc.php';
     </section>
     <section class="section-card" id="our-articles">
         <h1>Our Articles</h1>
-        <p>Here are some interesting articles that you will find interesting:</p>
+        <p>Here are some articles that you will find informative:</p>
         <div id="article-card-container">
             <?php
             include_once "../includes/DBConn.inc.php";

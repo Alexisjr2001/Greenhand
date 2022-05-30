@@ -1,5 +1,7 @@
 <header>
-    <div><a href="../Index/index.php"><img src="../Assets/logo-placeholder.png" alt="" class="GH_logo"></a></div>
+    <div><a href="../Index/index.php"><img
+                    src="../Assets/Logo.png"
+                    alt="" class="GH_logo"></a></div>
     <nav id="header-links">
         <a href="../Index/index.php#our-activities">Our Activities</a>
         <a href="../Index/index.php#our-articles">Our Articles</a>
@@ -22,26 +24,25 @@
         if (isset($_SESSION['id'])) {
             include_once "../includes/DBConn.inc.php";
 
-            $stmt=mysqli_stmt_init($conn);
-            $sql='SELECT usersImage FROM users WHERE usersID=?;';
-            if(!mysqli_stmt_prepare($stmt,$sql)){
-                $urlQuery["server"]="error";
+            $stmt = mysqli_stmt_init($conn);
+            $sql = 'SELECT usersImage FROM users WHERE usersID=?;';
+            if (!mysqli_stmt_prepare($stmt, $sql)) {
+                $urlQuery["server"] = "error";
                 exitPHP($urlQuery);
             }
-            $id=$_SESSION['id']+0;
-            mysqli_stmt_bind_param($stmt,"i",$id);
+            $id = $_SESSION['id'] + 0;
+            mysqli_stmt_bind_param($stmt, "i", $id);
             mysqli_stmt_execute($stmt);
-            $results=mysqli_stmt_get_result($stmt);
-            if(mysqli_num_rows($results)==0){
-                $path="../Assets/empty-user.png";
-            }
-            else{
-                $path=mysqli_fetch_assoc($results)['usersImage'];
+            $results = mysqli_stmt_get_result($stmt);
+            if (mysqli_num_rows($results) == 0) {
+                $path = "../Assets/empty-user.png";
+            } else {
+                $path = mysqli_fetch_assoc($results)['usersImage'];
             }
             echo '<div class="dropdown">
                       <button class="dropbtn">Profile</button>
                       <div class="dropdown-content">
-                        <img src="'.$path.'" alt="user image" id="prof-image">
+                        <img src="' . $path . '" alt="user image" id="prof-image">
                         <a href="../Article/PublishArticle.php">Publish Article</a>
                         <a href="../Activity/PublishActivity.php">Publish Activity</a>
                         <a href="">Edit Profile</a>

@@ -35,24 +35,41 @@ include_once '../includes/Header.inc.php';
     </section>
     <section class="section-card" id="our-activities">
         <h1>Our Activities</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sed ipsum et praesentium autem
-            repellat.</p>
+        <p>Here are some activities you might be interested in:</p>
         <div id="activity-card-container">
-            <a class="activity-card" href="../Activity/ActivityView.php">
-                <h1>Example Activity</h1>
-                <img src="../Assets/placeholder-image.png" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, assumenda.</p>
-            </a>
-            <a class="activity-card" href="../Activity/ActivityView.php">
-                <h1>Activity 2</h1>
-                <img src="../Assets/placeholder-image.png" alt="">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, illum!</p>
-            </a>
-            <a class="activity-card" href="../Activity/ActivityView.php">
-                <h1>Activity 3</h1>
-                <img src="../Assets/placeholder-image.png" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, nihil.</p>
-            </a>
+            <?php
+            include_once "../includes/DBConn.inc.php";
+
+            $stmt=mysqli_stmt_init($conn);
+            $sql="SELECT * FROM activities";
+            if(!mysqli_stmt_prepare($stmt,$sql)){
+                header("Location: ../Index/index.php?activityID=error");
+                exit();
+            }
+            mysqli_stmt_execute($stmt);
+            $results=mysqli_stmt_get_result($stmt);
+            if(mysqli_num_rows($results)>0){
+                $counter=0;
+                while($row = mysqli_fetch_assoc($results)){
+                    $path=$row['activitiesJSON'];
+                    $json=file_get_contents('../Activity/ActivityJSON/'.$path);
+                    $array=json_decode($json,true);
+                    $img="";
+                    if(count($array['uploadedFiles'])>0){
+                        $img='../Activity/'.array_values($array['uploadedFiles'])[0];
+                    }
+                    echo '<a class="activity-card" href="../Activity/ActivityView.php?activityID='.$row['activitiesID'].'">
+                <h1>'.$array['title'].'</h1>
+                <img src="'.$img.'" alt="">
+                <p>'.$array['description'].'</p>
+            </a>';
+                    $counter=$counter+1;
+                    if ($counter==3){
+                        break;
+                    }
+                }
+            }
+            ?>
         </div>
         <a href="../Activity/PublishActivity.php" class="publish-something">Publish an activity!</a>
     </section>
@@ -97,24 +114,41 @@ include_once '../includes/Header.inc.php';
     </section>
     <section class="section-card" id="our-articles">
         <h1>Our Articles</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sed ipsum et praesentium autem
-            repellat.</p>
+        <p>Here are some interesting articles that you will find interesting:</p>
         <div id="article-card-container">
-            <a class="activity-card" href="../Article/Article.php">
-                <h1>Example Article</h1>
-                <img src="../Assets/placeholder-image.png" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, assumenda.</p>
-            </a>
-            <a class="activity-card" href="../Article/Article.php">
-                <h1>Article 2</h1>
-                <img src="../Assets/placeholder-image.png" alt="">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, illum!</p>
-            </a>
-            <a class="activity-card" href="../Article/Article.php">
-                <h1>Article 3</h1>
-                <img src="../Assets/placeholder-image.png" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, nihil.</p>
-            </a>
+            <?php
+            include_once "../includes/DBConn.inc.php";
+
+            $stmt=mysqli_stmt_init($conn);
+            $sql="SELECT * FROM articles";
+            if(!mysqli_stmt_prepare($stmt,$sql)){
+                header("Location: ../Index/index.php?articleID=error");
+                exit();
+            }
+            mysqli_stmt_execute($stmt);
+            $results=mysqli_stmt_get_result($stmt);
+            if(mysqli_num_rows($results)>0){
+                $counter=0;
+                while($row = mysqli_fetch_assoc($results)){
+                    $path=$row['articlesJSON'];
+                    $json=file_get_contents('../Article/ArticleJSON/'.$path);
+                    $array=json_decode($json,true);
+                    $img="";
+                    if(count($array['uploadedFiles'])>0){
+                        $img='../Article/'.array_values($array['uploadedFiles'])[0];
+                    }
+                    echo '<a class="activity-card" href="../Article/Article.php?articleID='.$row['articlesID'].'">
+                <h1>'.$array['title'].'</h1>
+                <img src="'.$img.'" alt="">
+                <p>'.$array['description'].'</p>
+            </a>';
+                    $counter=$counter+1;
+                    if ($counter==3){
+                        break;
+                    }
+                }
+            }
+            ?>
         </div>
         <a href="../Article/PublishArticle.php" class="publish-something">Publish an article!</a>
     </section>

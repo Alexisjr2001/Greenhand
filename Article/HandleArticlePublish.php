@@ -9,6 +9,12 @@ function exitPHP($GETParams){
 if(isset($_POST['submit'])){
     $urlQuery=array();
     $title=$_POST['title'];
+    if(isset($_SESSION['id'])){
+        $writerID=$_SESSION['id'];
+    }
+    else{
+        $urlQuery['writerID']='not-found';
+    }
     $allCategories=$_POST['allCategories'];
     $categories=array();
     if(isset($_POST['categories'])){
@@ -32,8 +38,9 @@ if(isset($_POST['submit'])){
     $uploadedFiles=array();
     $folder="ArticleMultimedia/";
     Handle($folder,$uploadedFiles,$urlQuery);
+    $date=date("Y/m/d");
 
-    $json=json_encode(array('title'=>$title,'categories'=>$categories,'description'=>$description,'detailed'=>$detailed,'uploadedFiles'=>$uploadedFiles));
+    $json=json_encode(array('title'=>$title,'writerID'=>$writerID,'categories'=>$categories,'description'=>$description,'detailed'=>$detailed,'date'=>$date,'uploadedFiles'=>$uploadedFiles));
     $jsonFileName=uniqid('',true).".json";
     if(!file_put_contents("ArticleJSON/$jsonFileName",$json)){
         $urlQuery["json"]="err";

@@ -18,58 +18,122 @@ session_start();
 include_once '../includes/Header.inc.php';
 ?>
 <main>
-    <h1>Article Title</h1>
+    <?php
+    if(isset($_GET['articleID'])){
+        include_once "../includes/DBConn.inc.php";
+
+        $stmt=mysqli_stmt_init($conn);
+        $sql="SELECT * FROM articles WHERE articlesID=?";
+        if(!mysqli_stmt_prepare($stmt,$sql)){
+            header("Location: ../Index/index.php?articleID=error");
+            exit();
+        }
+        $id=$_GET['articleID']+0;
+        mysqli_stmt_bind_param($stmt,"i",$id);
+        mysqli_stmt_execute($stmt);
+        $results=mysqli_stmt_get_result($stmt);
+        if(mysqli_num_rows($results)==0){
+            header("Location: ../Index/index.php?articleID=not-found");
+            exit();
+        }
+        else{
+            $path=mysqli_fetch_assoc($results)['articlesJSON'];
+        }
+    }
+    else{
+        header("Location: ../Index/index.php?articleID=not-found");
+        exit();
+    }
+    $json=file_get_contents('ArticleJSON/'.$path);
+    $array=json_decode($json,true);
+    ?>
+    <?php
+    echo '<h1>'.$array['title'].'</h1>';
+    ?>
+    <?php
+    include_once "../includes/DBConn.inc.php";
+
+    $stmt=mysqli_stmt_init($conn);
+    $sql="SELECT usersName FROM users WHERE usersID=?";
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("Location: ../Index/index.php?writerName=error");
+        exit();
+    }
+    $id=$array['writerID']+0;
+    mysqli_stmt_bind_param($stmt,"i",$id);
+    mysqli_stmt_execute($stmt);
+    $results=mysqli_stmt_get_result($stmt);
+    if(mysqli_num_rows($results)==0){
+        header("Location: ../Index/index.php?creator=not-found");
+        exit();
+    }
+    else{
+        $name = mysqli_fetch_assoc($results)['usersName'];
+    }
+    echo '<h3>'.$name.'</h3>';
+    ?>
+    <?php
+    echo '<h3>Category:';
+    if(count($array['categories'])>0){
+        foreach($array['categories'] as $key=>$value){
+            echo "$value ";
+        }
+    }
+    echo '</h3>';
+    echo '<h3>Date: '.$array['date'].'</h3>';
+    ?>
     <section class="container">
-        <div id="article-category">
-            <div>Article's Category</div>
-        </div>
-        <div id="infos">
-            <div>Author name: Lorem, ipsum.</div>
-            <div>Organization Name: Lorem</div>
-            <div>Date: dd/mm/yyyy</div>
-        </div>
-
-        <div id="article-content">
-            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus aliquid autem, blanditiis ex explicabo fugit modi natus, nemo, nisi non omnis qui quo rerum suscipit totam veniam. A, delectus?</span><span>Explicabo hic inventore minus nisi nobis obcaecati porro provident quo similique, unde. A aperiam blanditiis delectus dicta eveniet excepturi, harum illo ipsam molestiae officiis possimus sunt tempore? Ab dolorum, sit!</span><span>Ab ad culpa in ipsa ipsam iusto magnam magni minus molestias nostrum, repudiandae veniam voluptate. Dolor earum fugit ipsam odio. Asperiores at est laboriosam nemo nesciunt quod suscipit unde vero.</span>
+        <div class="content_container">
+            <p>
+                <?php
+                echo $array['detailed'];
+                ?>
             </p>
-            <img src="/Assets/placeholder-image.png" alt="article image">
-        </div>
-
-        <div id="similar_activity_container">
-            <p id="also-like">You might also like this:</p>
-            <a class="activity-card" href="">
-                <h3>Similar Article</h3>
-                <img src="../Assets/placeholder-image.png" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, nihil.</p>
-            </a>
         </div>
     </section>
 </main>
-<?php
-include_once '../includes/Footer.inc.php';
-?>
+<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<body>
+
+<div class="main-carousel">
+    <div class="ell"><img src="../Assets/light_blue.jpg"></div>
+    <div class="ell"><img src="../Assets/meta.jpg"></div>
+    <div class="ell"><img src="../Assets/dark_blue.jpg"></div>
+    <div class="ell"><img src="../Assets/black.jpg"></div>
+    <div class="ell"><img src="../Assets/pinterest.jpg"></div>
+</div>
+
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script type="text/javascript">
+    $('.main-carousel').flickity({
+        cellAlign: 'left',
+        wrapAround: true,
+        freeScroll: true
+    });
+</script>
+<footer id="contact-us">
+    <div id="footer-title-container">
+        <h1><b>Contact Us!</b></h1>
+    </div>
+    <div id="footer-details-container">
+        <div id="contact-info">
+            <p>Telephone: +30 123123123</p>
+            <p>Email: contact-us@greenhand.com</p>
+            <p>Street Address: Fictional Street 15</p>
+        </div>
+        <div id="follow-us">
+            <div id="follow-us-title"><b>Follow Us!</b></div>
+            <div id="follow-us-links">
+                <a href=""><img src="../Assets/facebook-logo.png" alt=""></a>
+                <a href=""><img src="../Assets/twitter-logo.png" alt=""></a>
+                <a href=""><img src="../Assets/youtube-logo.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
 </body>
 </html>
-
-
-<!-- <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"> -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-<!-- <body> -->
-
-<!-- <div class="main-carousel"> -->
-<!--     <div class="ell"><img src="../Assets/light_blue.jpg"></div> -->
-<!--     <div class="ell"><img src="../Assets/meta.jpg"></div> -->
-<!--     <div class="ell"><img src="../Assets/dark_blue.jpg"></div> -->
-<!--     <div class="ell"><img src="../Assets/black.jpg"></div> -->
-<!--     <div class="ell"><img src="../Assets/pinterest.jpg"></div> -->
-<!-- </div> -->
-
-
-<!-- <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> -->
-<!-- <script type="text/javascript"> -->
-<!--     $('.main-carousel').flickity({ -->
-<!--         cellAlign: 'left', -->
-<!--         wrapAround: true, -->
-<!--         freeScroll: true -->
-<!--     }); -->
-<!-- </script> -->

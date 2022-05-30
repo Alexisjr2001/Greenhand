@@ -8,32 +8,57 @@
     <title>Organization Page</title>
     <link rel="stylesheet" href="OrganizationPage.css">
     <link rel="stylesheet" href="../miscellaneous.css">
-    <script type="text/javascript" src="index.js"></script>
 </head>
 <body>
 <?php
 include_once '../includes/Header.inc.php';
+include_once '../includes/DBConn.inc.php';
+if(!isset($_GET['orgID'])){
+    header("Location: ../Index/index.php");
+    exit();
+}
+$stmt=mysqli_stmt_init($conn);
+$sql='SELECT * FROM users WHERE usersID=?';
+if(!mysqli_stmt_prepare($stmt,$sql)){
+    header("Location: ../Index/index.php?statement=err");
+    exit();
+}
+$id=$_GET['orgID'];
+mysqli_stmt_bind_param($stmt,"s",$id);
+mysqli_stmt_execute($stmt);
+$results=mysqli_stmt_get_result($stmt);
+if(mysqli_num_rows($results)==0){
+    header("Location: ../Index/index.php?orgID=not-found");
+    exit();
+}
+$row=mysqli_fetch_assoc($results);
 ?>
-<h1>Organization's Name(PHP)</h1>
+<?php
+echo '<h1>'.$row['usersName'].'</h1>';
+?>
 <section id="container">
     <div id="content-container">
         <span>Organization's Country:</span>
-        <span>php</span>
+        <?php
+        echo '<span>'.$row['usersCountry'].'</span>';
+        ?>
     </div>
     <div id="content-container">
-        <span>Organization's City:</span>
-        <span>php</span>
-    </div>
-    <div id="content-container">
-        <span>Organization's Town:</span>
-        <span>php</span>
+        <span>Organization's City/Town:</span>
+        <?php
+        echo '<span>'.$row['usersCity'].'</span>';
+        ?>
     </div>
     <div id="content-container">
         <span>Organization's Phone Number:</span>
-        <span>php</span>
+        <?php
+        echo '<span>'.$row['usersPhone'].'</span>';
+        ?>
     </div>
     <div id="image-container">
-        <img src="/Assets/placeholder-image.png" alt="Organization's Image">
+        <?php
+        echo '<img src="'.$row['usersImage'].'" alt="Organization'."&lsquos".' Image">';
+        ?>
     </div>
 </section>
 <?php

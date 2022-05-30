@@ -67,7 +67,7 @@ include_once '../includes/Header.inc.php';
     } else {
         $name = mysqli_fetch_assoc($results)['usersName'];
     }
-    echo '<h2>By <a href="">' . $name . '</a></h2>';
+    echo '<h2>By <a href="../Organization/OrganizationPage.php?orgID='.$id.'">' . $name . '</a></h2>';
     ?>
     <section id="container">
         <div id="content_container">
@@ -140,7 +140,9 @@ include_once '../includes/Header.inc.php';
                 ?>
             </section>
             <section class="participate-container">
-                <a href="../Organization/OrganizationPage.php">
+                <?php
+                echo '<a href="../Organization/OrganizationPage.php?orgID='.$id.'">';
+                ?>
                     <button id="participate">Participate!</button>
                 </a>
             </section>

@@ -29,7 +29,7 @@ include_once '../includes/Header.inc.php';
                 <a href="../SignUp/SignUp.html?switch=on" class="button">For Organizations</a>
             </div>
         </div>
-        <img src="../Assets/placeholder-image.png" alt="">
+        <img src="../Assets/tall-trees.png" alt="">
     </section>
     <section class="section-card" id="our-activities">
         <h1>Our Activities</h1>

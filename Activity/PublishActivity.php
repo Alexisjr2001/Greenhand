@@ -9,7 +9,7 @@ session_start();
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Publish Activity</title>
-    <link rel="stylesheet" href="/Activity/PublishActivity.css">
+    <link rel="stylesheet" href="PublishActivity.css">
     <link rel="stylesheet" href="../miscellaneous.css">
     <script src="../Index/index.js"></script>
 </head>

@@ -8,102 +8,6 @@ body {
     right: 0; */
 }
 
-/*--------------------------------------------HEADER CSS----------------------------------------------*/
-/* header {
-    background-color: #4AB56F;
-    display: flex;
-    padding-left: 0em;
-    padding-right: 0em;
-    box-shadow: 0 5px 10px rgba(84, 132, 73, 0.475);
-    flex-grow: 1;
-    justify-content: center;
-
-    top: 0;
-    left: 0;
-    right: 0;
-    position:sticky;
-
-    z-index: 999;
-}
-
-@media only screen and (min-width: 1440px) {
-    header {
-        padding-left: 3em;
-        padding-right: 3em;
-    }
-}
-
-@media only screen and (min-width: 2000px) {
-    header {
-        padding-left: 15em;
-        padding-right: 15em;
-    }
-} */
-
-/* Children of header*/
-/* header>* { 
-    display:flex;
-    flex:1;
-    align-items: center;
-
-    min-height: 2em;
-    max-height: 3em;
-}
-
-.GH_logo {
-    max-height: 3em;
-}
-
-#header-links>a, #header-sign-up>a{
-    text-decoration: none;
-    color: black;
-    padding: .7em;
-    border-radius: 1em;
-    transition: all .5s;
-}
-
-@media only screen and (max-width: 935px) {
-    #header-links {
-        display: none;
-    }
-}
-
-#header-links>a:hover, #header-sign-up>a:hover{
-    text-decoration: none;
-    color: black;
-    background-color: #2e9352;
-}
-
-#header-links>a{
-    padding-right: 1em;
-    padding-left: 1em;
-    margin-left: 1em;
-    margin-right: 1em;
-
-    text-align: center;
-}
-#header-sign-up>a {
-    padding-right: .3em;
-    padding-left:.3em;
-    margin-left: .3em;
-    margin-right: .3em;
-    
-    border-style: dotted;
-    border-color: rgb(19, 79, 39);
-}
-#header-links {
-    justify-content: center;
-    flex: 3;
-}
-
-#header-sign-up {
-    justify-content: center;
-    
-    border-radius: 3em;
-    border-style: dotted;
-    border-color: rgb(19, 79, 39);
-} */
-
 /*--------------------------------------------MAIN PAGE CSS----------------------------------------------*/
 
 #main-page-container {
@@ -152,14 +56,14 @@ body {
 
 /*------------------------------------Join Us CSS--------------------------------------*/
 
-#join-us>img {
+#join-us > img {
     margin: 1em;
     align-self: center;
     display: none;
 }
 
 @media only screen and (min-width: 1024px) {
-    #join-us>img {
+    #join-us > img {
         display: block;
         max-height: 15em;
     }
@@ -170,13 +74,13 @@ body {
     flex-direction: column;
 }
 
-#join-us-container>h1 {
+#join-us-container > h1 {
     align-self: center;
     text-align: center;
     margin: 0em;
 }
 
-#join-us-container>p {
+#join-us-container > p {
     align-self: center;
     text-align: center;
 }
@@ -189,7 +93,7 @@ body {
     align-items: center;
 }
 
-#join-button-container>a {
+#join-button-container > a {
     margin-left: .3em;
     margin-right: .3em;
     padding: .7em;
@@ -202,22 +106,23 @@ body {
 }
 
 @media only screen and (min-width: 425px) {
-    #join-button-container>a {
+    #join-button-container > a {
         margin-left: 1.5em;
         margin-right: 1.5em;
     }
 }
 
-#join-button-container>a:hover {
+#join-button-container > a:hover {
     background-color: rgb(42, 80, 123);
 }
 
 /*------------------------------------Our Activities CSS & Our Articles--------------------------------------*/
-#our-activities,#our-articles{
+#our-activities, #our-articles {
     flex-direction: column;
     /* padding: 2em; */
 }
-#our-activities>h1, #our-activities>p, #our-articles>h1, #our-articles>p  {
+
+#our-activities > h1, #our-activities > p, #our-articles > h1, #our-articles > p {
     text-align: center;
 }
 
@@ -228,18 +133,18 @@ body {
     justify-content: center;
 }
 
-.activity-card>img {
+.activity-card > img {
     /* max-height: auto; */
     max-width: 10em;
 }
 
-.activity-card>p {
+.activity-card > p {
     max-width: 16em;
     /* margin: 0em; */
 }
 
 @media only screen and (min-width: 768px) {
-    .activity-card>img {
+    .activity-card > img {
         max-width: 16em;
     }
 }
@@ -260,7 +165,7 @@ body {
     transition: all .5s;
 }
 
-.activity-card>p {
+.activity-card > p {
     margin: 1.5em;
 }
 
@@ -278,8 +183,8 @@ body {
     align-self: center;
 }
 
-.publish-something:hover{
-    text-decoration:underline;
+.publish-something:hover {
+    text-decoration: underline;
     transition: all 0.5s;
 }
 
@@ -300,6 +205,7 @@ body {
 #detailed-activities-title {
     text-align: center;
 }
+
 #detailed-activities-switch-container {
     /* display: none; */
     /* margin-left: auto; */
@@ -321,7 +227,7 @@ body {
     flex-direction: column;
 }
 
-.detailed-activities-link>img {
+.detailed-activities-link > img {
     /* margin-left: 2em;
     margin-right: 2em; */
     margin-top: 1em;
@@ -329,17 +235,17 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
-    .detailed-activities-link>img {
+    .detailed-activities-link > img {
         margin-left: 1em;
         margin-right: 1em;
         max-width: 13em;
     }
 }
 
-.detailed-activities-link>p {
+.detailed-activities-link > p {
     text-align: center;
 }
 
-#detailed-activities-type-container>a {
+#detailed-activities-type-container > a {
     display: none;
 }

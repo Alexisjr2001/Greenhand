@@ -23,10 +23,7 @@ include_once '../includes/Header.inc.php';
     <section class="section-card" id="join-us">
         <div id="join-us-container">
             <h1>Join Greenhand Today!</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium et cum vero, iste dolore quisquam, in
-                velit voluptate exercitationem repellat repudiandae. Soluta fugiat, hic aperiam quo quaerat ut aliquam,
-                sapiente possimus sunt veniam rem, laboriosam quis. Quasi quibusdam repellat provident itaque, sit
-                quidem, corrupti nobis enim voluptatem similique, sequi voluptate.</p>
+            <p>Welcome to our new website, created with the user in mind, to create a big community that respects the environment. We aim to help people find interesting articles and activities close to their location. We also provide the ability to organizations to create an account, and post their own activities and articles for the whole world to see! </p>
             <div id="join-button-container">
                 <a href="../SignUp/SignUp.html" class="button">For Volunteers</a>
                 <a href="../SignUp/SignUp.html?switch=on" class="button">For Organizations</a>
